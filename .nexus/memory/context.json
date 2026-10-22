@@ -1,0 +1,155 @@
+{
+  "agent_os": ".nexus",
+  "created_at": "2026-09-24",
+  "session_state": {
+    "active_skill": "orchestrator",
+    "last_updated": "2026-09-24T12:07:00-04:00"
+  },
+  "business_profile": {
+    "parent_company": {
+      "name": "Luisa Coffee",
+      "url": "https://luisacoffee.com",
+      "tagline": "One specialty coffee, three ways to meet it: a handcrafted cart for your event, a machine for your office, and beans roasted at origin for your home.",
+      "origin_story": "We buy the green bean directly at origin, roast it ourselves in Colombia (100% Arabica variety), and bring it to Miami. No resellers, no shortcuts — the same bean in every cart, office, and bag.",
+      "telephone": "+1-786-659-4164",
+      "email": "info@luisacoffee.com",
+      "instagram": "https://www.instagram.com/luisa.coffee/",
+      "linkedin": "https://www.linkedin.com/company/luisa-coffee/"
+    },
+    "mobile_cart_brands": [
+      {
+        "name": "Miami Coffee Cart",
+        "url": "https://miamicoffeecart.com",
+        "email": "cart@luisacoffee.com",
+        "telephone": "+1-786-530-2517",
+        "address": "Miami, FL 33130",
+        "google_maps": "https://maps.app.goo.gl/z6FM6gKkGgGBvBSh8",
+        "services": [
+          "Coffee Catering Miami",
+          "Wedding Coffee Cart",
+          "Corporate Coffee Catering",
+          "Coffee Cart Rental",
+          "Matcha Cart",
+          "Hot Chocolate Cart",
+          "Luisa Moments (Live photo wall & guestbook included)"
+        ]
+      },
+      {
+        "name": "Miami Matcha Cart",
+        "url": "https://miamimatchacart.com",
+        "email": "matcha@luisacoffee.com",
+        "telephone": "+1-786-530-2517",
+        "menu": [
+          "Iced Matcha Lattes",
+          "Hot Matcha Lattes",
+          "Strawberry Matcha",
+          "Ceremonial-grade matcha prepared fresh on-site",
+          "Dairy-free options: oat, almond, or coconut milk"
+        ]
+      },
+      {
+        "name": "Miami Hot Chocolate Cart",
+        "url": "https://miamihotchocolatecart.com",
+        "email": "hotchocolate@luisacoffee.com",
+        "telephone": "+1-786-530-2517",
+        "menu": [
+          "Classic Hot Chocolate",
+          "Spiced and seasonal flavors",
+          "Toppings: shaved chocolate and gold flake",
+          "Dairy-free options: oat, almond, or coconut milk",
+          "Coffee + Hot Chocolate Combo with Miami Coffee Cart"
+        ]
+      },
+      {
+        "name": "Miami Refresher Cart",
+        "url": "https://miamirefreshercart.com",
+        "alias_url": "https://miamirefresercart.com",
+        "email": "refresher@luisacoffee.com",
+        "telephone": "+1-786-530-2517",
+        "menu": [
+          "Craft Fruit Refreshers",
+          "Botanical & Herbal Infusions",
+          "Sparkling Iced Teas",
+          "Cold-Pressed Citrus Blends",
+          "Hydration & Energy Mocktails"
+        ]
+      }
+    ],
+    "sister_brands": [
+      {
+        "name": "Miami Coffee Services",
+        "url": "https://miamicoffeeservices.com"
+      },
+      {
+        "name": "Miami Coffee Lab",
+        "url": "https://miamicoffeelab.com"
+      }
+    ],
+    "service_areas": [
+      "Miami-Dade County (Miami, Brickell, Coral Gables, Miami Beach)",
+      "Broward County (Fort Lauderdale)",
+      "Palm Beach County (West Palm Beach, Boca Raton)"
+    ],
+    "event_types": [
+      "Weddings",
+      "Corporate Events",
+      "Private Parties",
+      "Trade Shows & Expos",
+      "Brand Activations",
+      "Schools & Universities",
+      "Non-Profits & Community"
+    ],
+    "pricing_and_specs": {
+      "starting_price_usd": 750,
+      "starting_package_includes": "2 hours of service, 1 professional barista, up to 50 guests (Starting minimum $750)",
+      "quote_turnaround": "Within 24 hours / 1 business day via FlashQuotes form",
+      "recommended_advance_booking": "3 to 6 weeks in advance for weddings and large corporate events (shorter notice available for smaller private parties)",
+      "power_requirement": "Standard 120V outlet",
+      "space_requirement": "At least 5x5 ft area",
+      "custom_branding": "Foam art, custom cups & cart wraps"
+    },
+    "full_drink_menu": {
+      "espresso_drinks": ["Espresso", "Americano", "Cappuccino", "Latte", "Macchiato", "Cortado"],
+      "flavored_lattes": ["Vanilla Latte", "Caramel Latte", "Hazelnut Latte", "Mocha", "White Chocolate Mocha"],
+      "specialty_drinks": ["Iced Coffee", "Cold Brew", "Nitro Cold Brew", "Chai Latte", "Matcha Latte", "Hot Chocolate"],
+      "matcha_cart_specialties": ["Iced Matcha Latte", "Hot Matcha Latte", "Strawberry Matcha"],
+      "hot_chocolate_toppings": ["Shaved chocolate", "Gold flake"],
+      "milk_options": ["Dairy milk", "Oat milk", "Almond milk", "Coconut milk"]
+    },
+    "trusted_by_clients": [
+      "Mana Tech",
+      "Co-Work",
+      "City of Miami Beach",
+      "Merrill (A Bank of America Company)",
+      "ClareMedica",
+      "Morgan",
+      "Saks Fifth Avenue",
+      "Marsh Re",
+      "Betterfly",
+      "Financial Design",
+      "Riviera School",
+      "Cargill"
+    ]
+  },
+  "brand_memory": {
+    "fonts": {
+      "primary_display": "Playfair Display (400, 700, 900 Italic)",
+      "primary_sans": "Inter (300, 400, 500, 600, 700)",
+      "editorial_serif": "Georgia, serif"
+    },
+    "colors": {
+      "coffee_orange_cta": "#F97316",
+      "matcha_teal": "#1F4A4A",
+      "matcha_teal_dark": "#143232",
+      "matcha_green": "#6B8F3A",
+      "matcha_green_dark": "#3F6B3F",
+      "mustard_accent": "#E0A83F",
+      "cream_bg": "#FAF7F0",
+      "white_bg": "#FFFFFF",
+      "text_dark": "#22322F",
+      "text_muted": "#5A675F"
+    },
+    "html_exported": true,
+    "html_file": "outputs/brand-kit.html"
+  }
+}

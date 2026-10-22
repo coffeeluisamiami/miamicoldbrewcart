@@ -1,0 +1,31 @@
+# Credentials and Secrets
+gmail_credentials.json
+*credentials*.json
+.env
+.env.*
+*.pem
+*.key
+
+# Pipeline outputs with prospect PII
+client-package.md
+
+# Node & Python dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+
+# Firebase & Deployment logs
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+audit_credentials.py

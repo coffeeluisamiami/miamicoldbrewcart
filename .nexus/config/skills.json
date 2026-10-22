@@ -1,0 +1,77 @@
+{
+  "system_name": ".nexus",
+  "version": "1.0.0",
+  "default_router": "orchestrator",
+  "skills": [
+    {
+      "id": "orchestrator",
+      "name": "Nexus Orchestrator",
+      "file": "skills/orchestrator.md",
+      "role": "router",
+      "description": "Central routing agent for the .nexus Agent OS. Analyzes user intent, confirms which skill will handle the request out loud, and routes execution without doing domain work itself.",
+      "trigger_phrases": [
+        "help me choose a skill",
+        "what skills do you have",
+        "list available skills",
+        "which agent should I use",
+        "route my request",
+        "que habilidades tienes",
+        "que agentes estan disponibles",
+        "ayudame a elegir un agente"
+      ]
+    },
+    {
+      "id": "skill_builder",
+      "name": "Skill Builder",
+      "file": "skills/skill_builder.md",
+      "role": "builder",
+      "description": "Creates new AI agent skills (.md system prompts), interviews the user for requirements and edge cases, generates test cases, and optimizes skill descriptions for reliable triggering.",
+      "trigger_phrases": [
+        "build a new skill",
+        "create an agent for",
+        "write a system prompt for",
+        "add a skill to my agent folder",
+        "improve this skill",
+        "turn this workflow into a skill",
+        "crear una nueva habilidad",
+        "hacer un nuevo agente",
+        "escribir un system prompt"
+      ]
+    },
+    {
+      "id": "brand_kit",
+      "name": "Brand Kit Builder",
+      "file": "skills/brand_kit.md",
+      "role": "specialist",
+      "description": "Builds a complete personal or business brand identity one element at a time across 9 core pillars (logo, fonts, hex colors, vibe, tone, voice, guidelines, values, intro) and generates a styled single-page HTML brand book.",
+      "trigger_phrases": [
+        "build my brand kit",
+        "create a brand identity",
+        "help me pick brand colors and fonts",
+        "analyze this brand screenshot",
+        "define my brand tone of voice",
+        "generate my HTML brand guide",
+        "crear mi kit de marca",
+        "definir colores y tipografia de mi marca",
+        "hacer mi identidad visual"
+      ]
+    },
+    {
+      "id": "carousel",
+      "name": "Instagram Carousel Generator",
+      "file": "skills/carousel.md",
+      "role": "specialist",
+      "description": "Generates a complete 7-slide Instagram carousel (scroll-stopping Hook slide, 5 bulleted content slides, and CTA slide) plus 3 caption options (short, medium, long) with hashtags after asking for topic, audience, and goal.",
+      "trigger_phrases": [
+        "create an instagram carousel",
+        "make a 7-slide post about",
+        "write carousel slides for",
+        "instagram swipe post",
+        "hook and slides for instagram",
+        "crear un carrusel de instagram",
+        "hacer slides para instagram",
+        "generar post de carrusel"
+      ]
+    }
+  ]
+}

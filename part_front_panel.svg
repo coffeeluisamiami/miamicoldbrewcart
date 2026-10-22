@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="39.75in" height="30.0in" viewBox="0 0 39.75 30.0">
+  <!-- Reference Grid -->
+  <defs>
+    <pattern id="grid" width="1" height="1" patternUnits="userSpaceOnUse">
+      <path d="M 1 0 L 0 0 0 1" fill="none" stroke="#f0f0f0" stroke-width="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  <path d="M 0.7500 30.0000 L 0.7500 26.0000 L 0.0000 26.0000 L 0.0000 22.0000 L 0.7500 22.0000 L 0.7500 17.0000 L 0.0000 17.0000 L 0.0000 13.0000 L 0.7500 13.0000 L 0.7500 8.0000 L 0.0000 8.0000 L 0.0000 4.0000 L 0.7500 4.0000 L 0.7500 0.0000 L 39.0000 0.0000 L 39.0000 4.0000 L 39.7500 4.0000 L 39.7500 8.0000 L 39.0000 8.0000 L 39.0000 13.0000 L 39.7500 13.0000 L 39.7500 17.0000 L 39.0000 17.0000 L 39.0000 22.0000 L 39.7500 22.0000 L 39.7500 26.0000 L 39.0000 26.0000 L 39.0000 30.0000 L 0.7500 30.0000 Z" fill="none" stroke="rgb(0, 0, 0)" stroke-width="0.05" name="Outer_Border" />
+  <path d="M 5.0000 26.3750 L 12.0000 26.3750 L 12.0000 25.6250 L 5.0000 25.6250 L 5.0000 26.3750 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 16.0000 26.3750 L 23.0000 26.3750 L 23.0000 25.6250 L 16.0000 25.6250 L 16.0000 26.3750 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 27.0000 26.3750 L 34.0000 26.3750 L 34.0000 25.6250 L 27.0000 25.6250 L 27.0000 26.3750 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <circle cx="4.9116" cy="26.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="12.0884" cy="26.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="12.0884" cy="25.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="4.9116" cy="25.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="15.9116" cy="26.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="23.0884" cy="26.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="23.0884" cy="25.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="15.9116" cy="25.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="26.9116" cy="26.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="34.0884" cy="26.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="34.0884" cy="25.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="26.9116" cy="25.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="0.3750" cy="24.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="39.3750" cy="24.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="0.3750" cy="15.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="39.3750" cy="15.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="0.3750" cy="6.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="39.3750" cy="6.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+</svg>

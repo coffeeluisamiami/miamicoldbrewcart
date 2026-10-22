@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Website contact form submissions
+    match /contacts/{contactId} {
+      allow create: if request.resource.data.email is string;
+      allow read, update, delete: if request.auth != null;
+    }
+
+    // Interactive chatbot leads
+    match /leads/{leadId} {
+      allow create: if request.resource.data.email is string;
+      allow read, update, delete: if request.auth != null;
+    }
+
+    // Chatbot conversations
+    match /messages/{messageId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null;
+    }
+
+    // Default deny all other operations
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}

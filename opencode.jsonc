@@ -1,0 +1,23 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "google/gemini-3.5-flash",
+  "mcp": {
+    "netlify": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@netlify/mcp"
+      ]
+    },
+    "firebase": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "firebase-tools",
+        "experimental:mcp"
+      ]
+    }
+  }
+}

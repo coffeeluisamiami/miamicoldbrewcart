@@ -1,0 +1,31 @@
+{
+  "business": "Miami Coffee Cart Ecosystem",
+  "base_sites": [
+    "miamicoffeecart.com (Sitio base de carros de café)",
+    "luisacoffee.com (Marca matriz / tostador)"
+  ],
+  "specialty_brands": [
+    "miamicoldbrewcart.com (Especialidad exclusiva en Cold Brew y Nitro)",
+    "miamimatchacart.com (Especialidad en Matcha ceremonial y lattes)",
+    "hotchocolatecart.com (Especialidad en Chocolate caliente gourmet)",
+    "miamirefreshercart.com (Especialidad en Refreshers y bebidas botánicas)"
+  ],
+  "current_focus_project": "miamicoldbrewcart.com",
+  "description": "Servicio premium de barras móviles especializadas (café espresso, cold brew, matcha, hot chocolate y refreshers) para eventos corporativos, convenciones, bodas y activaciones de marca en el sur de Florida.",
+  "ideal_customer_profile": "Event planners corporativos, agencias de marketing y activaciones, coordinadores de trade shows, directores de HR/experiencia de empleados en oficinas de Brickell, Wynwood, Coral Gables y centros de convenciones de Miami.",
+  "target_locations": [
+    "Miami Beach Convention Center",
+    "Mana Wynwood Convention Center",
+    "Torres corporativas en Brickell y Downtown Miami",
+    "Hoteles y centros de eventos de lujo en Miami"
+  ],
+  "offer": "Montaje de barras móviles independientes o multiconcepto adaptadas al cliente (desde barra clásica de café hasta barras temáticas de cold brew, matcha o refreshers) con capacidad de alto aforo y servicio ágil.",
+  "voice_and_tone": {
+    "style": "Directo, profesional, cálido, enfocado en hospitalidad de alta gama y logística impecable.",
+    "rules": [
+      "No usar saludos genéricos ni lenguaje cliché de ventas.",
+      "Mencionar la capacidad de personalizar la barra o marca según el evento.",
+      "Todo borrador de prospección es para revisión humana antes de cualquier envío."
+    ]
+  }
+}

@@ -1,0 +1,592 @@
+"""
+Agent Dashboard Builder
+Scans .agent/ directory automatically:
+- Identifies all agent folders
+- Reads docstrings/first-line descriptions from main files
+- Detects which agents call other agents (Boss), which are called (Sub-agent), and which have no connections (Standalone)
+- Generates a modern, responsive agent-dashboard/index.html ready for Netlify deployment
+"""
+
+import os
+import re
+import json
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).parent
+AGENT_DIR = ROOT_DIR / ".agent"
+DASHBOARD_DIR = ROOT_DIR / "agent-dashboard"
+DASHBOARD_DIR.mkdir(parents=True, exist_ok=True)
+
+def scan_agents():
+    agents = {}
+    agent_folders = [f for f in AGENT_DIR.iterdir() if f.is_dir()]
+    folder_names = [f.name for f in agent_folders]
+
+    for folder in agent_folders:
+        agent_id = folder.name
+        # Find primary script or markdown
+        py_files = list(folder.glob("*.py"))
+        md_files = list(folder.glob("*.md"))
+        
+        main_file = None
+        # Priority for runner or pipeline
+        for f in py_files:
+            if "runner" in f.name or "pipeline" in f.name:
+                main_file = f
+                break
+        if not main_file and py_files:
+            main_file = py_files[0]
+        if not main_file and md_files:
+            main_file = md_files[0]
+
+        description = "Specialized AI Operating System Agent."
+        file_content = ""
+        
+        if main_file and main_file.exists():
+            try:
+                with open(main_file, "r", encoding="utf-8") as f:
+                    file_content = f.read()
+                    lines = [l.strip() for l in file_content.splitlines() if l.strip()]
+                    # Look for docstring or first informative line
+                    for line in lines:
+                        cleaned = line.replace('"""', '').replace("'''", '').replace("#", "").strip()
+                        if len(cleaned) > 5 and not cleaned.startswith("import") and not cleaned.startswith("from"):
+                            description = cleaned
+                            break
+            except Exception as e:
+                print(f"Error reading {main_file}: {e}")
+
+        # Check references to other agents across all files in this agent folder
+        all_text = ""
+        for f in py_files + md_files:
+            try:
+                with open(f, "r", encoding="utf-8") as fl:
+                    all_text += "\n" + fl.read()
+            except Exception:
+                pass
+
+        calls = []
+        for other in folder_names:
+            if other != agent_id and other not in ["cso-agent", "cmo-agent"]: # Bosses don't appear as sub-agents of each other
+                other_alt = other.replace("-", "_")
+                if other in all_text or other_alt in all_text:
+                    calls.append(other)
+
+        # Department boundary enforcement: Email Writer sits under CMO, not CSO
+        if agent_id == "cso-agent":
+            calls = [c for c in calls if c != "email-writer"]
+
+        agents[agent_id] = {
+            "id": agent_id,
+            "name": agent_id.replace("-", " ").title(),
+            "main_file": main_file.name if main_file else "None",
+            "description": description,
+            "calls": calls,
+            "called_by": []
+        }
+
+    # Resolve called_by
+    for agent_id, data in agents.items():
+        for target in data["calls"]:
+            if target in agents:
+                agents[target]["called_by"].append(agent_id)
+
+    # Classify type: Boss, Sub-agent, or Standalone
+    for agent_id, data in agents.items():
+        if len(data["calls"]) > 0:
+            data["type"] = "Boss"
+        elif len(data["called_by"]) > 0:
+            data["type"] = "Sub-agent"
+        else:
+            data["type"] = "Standalone"
+
+    return agents
+
+def generate_html(agents):
+    bosses = [a for a in agents.values() if a["type"] == "Boss"]
+    standalones = [a for a in agents.values() if a["type"] == "Standalone"]
+    
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miami Cold Brew Cart • AI OS Agent Map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {{
+      --bg: #0b0f19;
+      --card-boss: #0f172a;
+      --card-boss-border: #334155;
+      --card-white: #ffffff;
+      --card-white-border: #e2e8f0;
+      --primary: #ea580c;
+      --primary-glow: rgba(234, 88, 12, 0.25);
+      --amber: #f59e0b;
+      --emerald: #10b981;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --line-color: #cbd5e1;
+    }}
+
+    * {{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }}
+
+    body {{
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      padding: 2.5rem 1.5rem 5rem;
+      min-height: 100vh;
+    }}
+
+    .container {{
+      max-width: 1240px;
+      margin: 0 auto;
+    }}
+
+    header {{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 3rem;
+    }}
+
+    .brand-title h1 {{
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }}
+
+    .brand-title p {{
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 0.35rem;
+    }}
+
+    .status-bar {{
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }}
+
+    .badge-live {{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+    }}
+
+    .badge-live .pulse {{
+      width: 8px;
+      height: 8px;
+      background-color: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+      animation: pulse 2s infinite;
+    }}
+
+    @keyframes pulse {{
+      0% {{ transform: scale(0.95); opacity: 0.8; }}
+      50% {{ transform: scale(1.3); opacity: 1; }}
+      100% {{ transform: scale(0.95); opacity: 0.8; }}
+    }}
+
+    .section-title {{
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }}
+
+    .section-title span.badge-count {{
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      color: #cbd5e1;
+    }}
+
+    /* Pipeline Map Section */
+    .pipeline-section {{
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 4rem;
+      position: relative;
+      overflow: hidden;
+    }}
+
+    .cross-dept-handoff-banner {{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background: linear-gradient(90deg, rgba(234, 88, 12, 0.15), rgba(245, 158, 11, 0.15));
+      border: 1px dashed rgba(245, 158, 11, 0.4);
+      border-radius: 12px;
+      padding: 0.75rem 1.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #fcd34d;
+    }}
+
+    .departments-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 2.5rem;
+    }}
+
+    @media (max-width: 640px) {{
+      .departments-grid {{
+        grid-template-columns: 1fr;
+      }}
+    }}
+
+    .dept-column {{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }}
+
+    /* Agent Cards */
+    .agent-card {{
+      width: 100%;
+      border-radius: 18px;
+      padding: 1.5rem 1.6rem;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }}
+
+    .agent-card:hover {{
+      transform: translateY(-4px);
+    }}
+
+    /* Boss Card: Navy Background */
+    .agent-card.boss {{
+      background-color: var(--card-boss);
+      border: 2px solid var(--card-boss-border);
+      color: #ffffff;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    }}
+
+    .agent-card.boss:hover {{
+      border-color: #38bdf8;
+      box-shadow: 0 14px 40px rgba(56, 189, 248, 0.18);
+    }}
+
+    /* Sub-agent / Standalone Card: White Background */
+    .agent-card.sub-agent,
+    .agent-card.standalone {{
+      background-color: var(--card-white);
+      border: 1.5px solid var(--card-white-border);
+      color: #0f172a;
+    }}
+
+    .agent-card.sub-agent:hover,
+    .agent-card.standalone:hover {{
+      border-color: var(--primary);
+      box-shadow: 0 14px 35px rgba(234, 88, 12, 0.15);
+    }}
+
+    .card-top {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.85rem;
+    }}
+
+    .agent-name {{
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }}
+
+    .badge {{
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.3rem 0.65rem;
+      border-radius: 8px;
+    }}
+
+    .badge-boss {{
+      background: #1e3a8a;
+      color: #93c5fd;
+      border: 1px solid #3b82f6;
+    }}
+
+    .badge-sub {{
+      background: #fff7ed;
+      color: #ea580c;
+      border: 1px solid #fed7aa;
+    }}
+
+    .badge-standalone {{
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #cbd5e1;
+    }}
+
+    .agent-desc {{
+      font-size: 0.92rem;
+      line-height: 1.55;
+      margin-bottom: 1.15rem;
+    }}
+
+    .agent-card.boss .agent-desc {{
+      color: #94a3b8;
+    }}
+
+    .agent-card.sub-agent .agent-desc,
+    .agent-card.standalone .agent-desc {{
+      color: #475569;
+    }}
+
+    .card-footer {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.07);
+      font-size: 0.8rem;
+      font-family: 'JetBrains Mono', monospace;
+    }}
+
+    .agent-card.boss .card-footer {{
+      border-top-color: rgba(255, 255, 255, 0.08);
+      color: #64748b;
+    }}
+
+    .agent-card.sub-agent .card-footer,
+    .agent-card.standalone .card-footer {{
+      color: #64748b;
+    }}
+
+    /* Visual Connectors */
+    .connector-line-vertical {{
+      width: 3px;
+      height: 38px;
+      background: linear-gradient(to bottom, #3b82f6, #ea580c);
+      margin: 0 auto;
+      border-radius: 3px;
+      position: relative;
+    }}
+
+    .connector-line-vertical::after {{
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 7px;
+      height: 7px;
+      background: #ea580c;
+      border-radius: 50%;
+    }}
+
+    .sub-agents-container {{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: relative;
+    }}
+
+    /* Standalone Grid Section */
+    .standalone-section {{
+      margin-top: 2rem;
+    }}
+
+    .standalone-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }}
+
+    .empty-state {{
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }}
+
+    footer {{
+      margin-top: 4rem;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.85rem;
+    }}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand-title">
+        <h1>Autonomous Multi-Agent Map</h1>
+        <p>Live Org Chart & Autonomous Client Delivery Pipeline • Miami Cold Brew Cart</p>
+      </div>
+      <div class="status-bar">
+        <div class="badge-live">
+          <div class="pulse"></div>
+          Pipeline Active &bull; Gmail Connected
+        </div>
+      </div>
+    </header>
+
+    <!-- Top Section: Connected Pipeline Map -->
+    <div class="section-title">
+      🏢 Active Delivery Pipeline Map
+      <span class="badge-count">{len(bosses)} Bosses &bull; {sum(len(b['calls']) for b in bosses)} Wired Specialists</span>
+    </div>
+
+    <div class="pipeline-section">
+      <div class="cross-dept-handoff-banner">
+        <span>⇄ Cross-Department Handoff:</span>
+        <strong>CSO Agent (Sales Scoping) &rarr; CMO Agent (Branded Delivery via Gmail)</strong>
+      </div>
+
+      <div class="departments-grid">
+"""
+
+    for boss in bosses:
+        html += f"""
+        <!-- Department Column: {boss['name']} -->
+        <div class="dept-column">
+          <!-- Boss Node (Navy Card) -->
+          <div class="agent-card boss">
+            <div class="card-top">
+              <span class="agent-name">{boss['name']}</span>
+              <span class="badge badge-boss">Boss</span>
+            </div>
+            <p class="agent-desc">{boss['description']}</p>
+            <div class="card-footer">
+              <span>Path: .agent/{boss['id']}/</span>
+              <span>Commands: {len(boss['calls'])} Specialist(s)</span>
+            </div>
+          </div>
+
+          <div class="connector-line-vertical"></div>
+
+          <!-- Sub-Agents (White Cards) -->
+          <div class="sub-agents-container">
+"""
+        for child_id in boss['calls']:
+            child = agents.get(child_id, {
+                "name": child_id.replace("-", " ").title(),
+                "description": "Specialist sub-agent execution engine.",
+                "id": child_id,
+                "main_file": "engine.py"
+            })
+            html += f"""
+            <div class="agent-card sub-agent">
+              <div class="card-top">
+                <span class="agent-name">{child['name']}</span>
+                <span class="badge badge-sub">Sub-agent</span>
+              </div>
+              <p class="agent-desc">{child['description']}</p>
+              <div class="card-footer">
+                <span>File: {child['main_file']}</span>
+                <span>Reports to: {boss['name']}</span>
+              </div>
+            </div>
+"""
+        html += """
+          </div>
+        </div>
+"""
+
+    html += f"""
+      </div>
+    </div>
+
+    <!-- Bottom Section: Standalone Agents Grid -->
+    <div class="standalone-section">
+      <div class="section-title">
+        🏝️ Standalone Agents Grid
+        <span class="badge-count">{len(standalones)} Standalone</span>
+      </div>
+
+      <div class="standalone-grid">
+"""
+    if standalones:
+        for agent in standalones:
+            html += f"""
+        <div class="agent-card standalone">
+          <div class="card-top">
+            <span class="agent-name">{agent['name']}</span>
+            <span class="badge badge-standalone">Standalone</span>
+          </div>
+          <p class="agent-desc">{agent['description']}</p>
+          <div class="card-footer">
+            <span>Path: .agent/{agent['id']}/</span>
+            <span>Unconnected Island</span>
+          </div>
+        </div>
+"""
+    else:
+        html += """
+        <div class="empty-state" style="grid-column: 1 / -1;">
+          <strong>No Standalone Islands Found</strong><br>
+          Every agent in the <code>.agent/</code> directory is actively connected to the executive chain of command.
+        </div>
+"""
+
+    html += """
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 Miami Cold Brew Cart • An Experiential Branch of Luisa Coffee & Miami Coffee Cart • Auto-Generated Pipeline Map</p>
+    </footer>
+  </div>
+</body>
+</html>
+"""
+    return html
+
+def main():
+    agents = scan_agents()
+    print(f"Scanned {len(agents)} agents from .agent/:")
+    for k, v in agents.items():
+        print(f"  - {k}: Type={v['type']}, Calls={v['calls']}, CalledBy={v['called_by']}")
+    
+    html = generate_html(agents)
+    output_file = DASHBOARD_DIR / "index.html"
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"\nSuccessfully generated upgraded dashboard at: {output_file}")
+
+if __name__ == "__main__":
+    main()

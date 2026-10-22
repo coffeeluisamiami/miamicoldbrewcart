@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96.0in" height="48.0in" viewBox="0 0 96.0 48.0">
+  <!-- Reference Grid -->
+  <defs>
+    <pattern id="grid" width="1" height="1" patternUnits="userSpaceOnUse">
+      <path d="M 1 0 L 0 0 0 1" fill="none" stroke="#f0f0f0" stroke-width="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  <path d="M 0.0000 48.0000 L 29.7500 48.0000 L 29.7500 18.0000 L 0.0000 18.0000 L 0.0000 48.0000 Z" fill="none" stroke="rgb(0, 0, 0)" stroke-width="0.05" name="Outer_Border" />
+  <path d="M 0.7500 44.0000 L 1.5000 44.0000 L 1.5000 40.0000 L 0.7500 40.0000 L 0.7500 44.0000 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 0.7500 35.0000 L 1.5000 35.0000 L 1.5000 31.0000 L 0.7500 31.0000 L 0.7500 35.0000 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 0.7500 26.0000 L 1.5000 26.0000 L 1.5000 22.0000 L 0.7500 22.0000 L 0.7500 26.0000 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 28.2500 44.0000 L 29.0000 44.0000 L 29.0000 40.0000 L 28.2500 40.0000 L 28.2500 44.0000 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 28.2500 35.0000 L 29.0000 35.0000 L 29.0000 31.0000 L 28.2500 31.0000 L 28.2500 35.0000 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 28.2500 26.0000 L 29.0000 26.0000 L 29.0000 22.0000 L 28.2500 22.0000 L 28.2500 26.0000 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 3.0000 44.3750 L 9.0000 44.3750 L 9.0000 43.6250 L 3.0000 43.6250 L 3.0000 44.3750 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 12.0000 44.3750 L 18.0000 44.3750 L 18.0000 43.6250 L 12.0000 43.6250 L 12.0000 44.3750 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 21.0000 44.3750 L 27.0000 44.3750 L 27.0000 43.6250 L 21.0000 43.6250 L 21.0000 44.3750 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 3.0000 32.3750 L 9.0000 32.3750 L 9.0000 31.6250 L 3.0000 31.6250 L 3.0000 32.3750 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 12.0000 32.3750 L 18.0000 32.3750 L 18.0000 31.6250 L 12.0000 31.6250 L 12.0000 32.3750 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 21.0000 32.3750 L 27.0000 32.3750 L 27.0000 31.6250 L 21.0000 31.6250 L 21.0000 32.3750 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 32.0000 48.0000 L 61.7500 48.0000 L 61.7500 18.0000 L 32.0000 18.0000 L 32.0000 48.0000 Z" fill="none" stroke="rgb(0, 0, 0)" stroke-width="0.05" name="Outer_Border" />
+  <path d="M 32.7500 44.0000 L 33.5000 44.0000 L 33.5000 40.0000 L 32.7500 40.0000 L 32.7500 44.0000 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 32.7500 35.0000 L 33.5000 35.0000 L 33.5000 31.0000 L 32.7500 31.0000 L 32.7500 35.0000 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 32.7500 26.0000 L 33.5000 26.0000 L 33.5000 22.0000 L 32.7500 22.0000 L 32.7500 26.0000 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 60.2500 44.0000 L 61.0000 44.0000 L 61.0000 40.0000 L 60.2500 40.0000 L 60.2500 44.0000 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 60.2500 35.0000 L 61.0000 35.0000 L 61.0000 31.0000 L 60.2500 31.0000 L 60.2500 35.0000 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 60.2500 26.0000 L 61.0000 26.0000 L 61.0000 22.0000 L 60.2500 22.0000 L 60.2500 26.0000 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 35.0000 44.3750 L 41.0000 44.3750 L 41.0000 43.6250 L 35.0000 43.6250 L 35.0000 44.3750 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 44.0000 44.3750 L 50.0000 44.3750 L 50.0000 43.6250 L 44.0000 43.6250 L 44.0000 44.3750 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 53.0000 44.3750 L 59.0000 44.3750 L 59.0000 43.6250 L 53.0000 43.6250 L 53.0000 44.3750 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 35.0000 32.3750 L 41.0000 32.3750 L 41.0000 31.6250 L 35.0000 31.6250 L 35.0000 32.3750 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 44.0000 32.3750 L 50.0000 32.3750 L 50.0000 31.6250 L 44.0000 31.6250 L 44.0000 32.3750 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <path d="M 53.0000 32.3750 L 59.0000 32.3750 L 59.0000 31.6250 L 53.0000 31.6250 L 53.0000 32.3750 Z" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Cut_Slot" />
+  <circle cx="0.6616" cy="44.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="1.5884" cy="44.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="1.5884" cy="39.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="0.6616" cy="39.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="0.6616" cy="35.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="1.5884" cy="35.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="1.5884" cy="30.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="0.6616" cy="30.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="0.6616" cy="26.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="1.5884" cy="26.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="1.5884" cy="21.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="0.6616" cy="21.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="28.1616" cy="44.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="29.0884" cy="44.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="29.0884" cy="39.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="28.1616" cy="39.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="28.1616" cy="35.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="29.0884" cy="35.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="29.0884" cy="30.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="28.1616" cy="30.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="28.1616" cy="26.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="29.0884" cy="26.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="29.0884" cy="21.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="28.1616" cy="21.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="2.9116" cy="44.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="9.0884" cy="44.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="9.0884" cy="43.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="2.9116" cy="43.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="11.9116" cy="44.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="18.0884" cy="44.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="18.0884" cy="43.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="11.9116" cy="43.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="20.9116" cy="44.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="27.0884" cy="44.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="27.0884" cy="43.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="20.9116" cy="43.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="2.9116" cy="32.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="9.0884" cy="32.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="9.0884" cy="31.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="2.9116" cy="31.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="11.9116" cy="32.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="18.0884" cy="32.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="18.0884" cy="31.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="11.9116" cy="31.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="20.9116" cy="32.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="27.0884" cy="32.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="27.0884" cy="31.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="20.9116" cy="31.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="1.1250" cy="42.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="28.6250" cy="42.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="1.1250" cy="33.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="28.6250" cy="33.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="1.1250" cy="24.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="28.6250" cy="24.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="32.6616" cy="44.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="33.5884" cy="44.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="33.5884" cy="39.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="32.6616" cy="39.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="32.6616" cy="35.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="33.5884" cy="35.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="33.5884" cy="30.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="32.6616" cy="30.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="32.6616" cy="26.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="33.5884" cy="26.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="33.5884" cy="21.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="32.6616" cy="21.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="60.1616" cy="44.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="61.0884" cy="44.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="61.0884" cy="39.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="60.1616" cy="39.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="60.1616" cy="35.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="61.0884" cy="35.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="61.0884" cy="30.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="60.1616" cy="30.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="60.1616" cy="26.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="61.0884" cy="26.0884" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="61.0884" cy="21.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="60.1616" cy="21.9116" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="34.9116" cy="44.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="41.0884" cy="44.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="41.0884" cy="43.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="34.9116" cy="43.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="43.9116" cy="44.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="50.0884" cy="44.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="50.0884" cy="43.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="43.9116" cy="43.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="52.9116" cy="44.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="59.0884" cy="44.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="59.0884" cy="43.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="52.9116" cy="43.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="34.9116" cy="32.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="41.0884" cy="32.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="41.0884" cy="31.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="34.9116" cy="31.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="43.9116" cy="32.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="50.0884" cy="32.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="50.0884" cy="31.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="43.9116" cy="31.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="52.9116" cy="32.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="59.0884" cy="32.4634" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="59.0884" cy="31.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="52.9116" cy="31.5366" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="" />
+  <circle cx="33.1250" cy="42.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="60.6250" cy="42.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="33.1250" cy="33.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="60.6250" cy="33.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="33.1250" cy="24.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+  <circle cx="60.6250" cy="24.0000" r="0.1250" fill="none" stroke="rgb(255, 0, 0)" stroke-width="0.05" name="Bolt_Hole" />
+</svg>

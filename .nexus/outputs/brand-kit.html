@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luisa Coffee · Miami Coffee, Matcha & Hot Chocolate Cart — Official Brand Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Exact CSS Variables from miamimatchacart.com & miamicoffeecart.com */
+      --coffee-orange: #F97316;
+      --teal: #1f4a4a;
+      --teal-dark: #143232;
+      --green: #6b8f3a;
+      --green-dark: #3f6b3f;
+      --mustard: #e0a83f;
+      --cream: #faf7f0;
+      --text: #22322f;
+      --text-light: #5a675f;
+      --white: #ffffff;
+      --font-display: 'Playfair Display', Georgia, "Times New Roman", serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    .topbar {
+      background: var(--teal-dark);
+      color: var(--white);
+      padding: 14px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .badge {
+      background: var(--coffee-orange);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 11px;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .hero {
+      padding: 64px 0 48px;
+      border-bottom: 1px solid rgba(31, 74, 74, 0.15);
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--coffee-orange);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      color: var(--teal);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      max-width: 820px;
+      margin-bottom: 24px;
+    }
+
+    .site-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .site-pill {
+      background: var(--white);
+      border: 1px solid rgba(31, 74, 74, 0.2);
+      color: var(--teal);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .hero-intro {
+      font-size: 1.05rem;
+      color: var(--text);
+      background: var(--white);
+      padding: 28px 32px;
+      border-left: 5px solid var(--coffee-orange);
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(20, 50, 50, 0.06);
+    }
+
+    section {
+      padding: 48px 0;
+      border-bottom: 1px solid rgba(31, 74, 74, 0.12);
+    }
+
+    .sec-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .sec-num {
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--white);
+      background: var(--teal);
+      padding: 5px 11px;
+      border-radius: 6px;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      color: var(--teal);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid rgba(31, 74, 74, 0.1);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(20, 50, 50, 0.05);
+    }
+
+    .card h3 {
+      font-family: var(--font-display);
+      color: var(--teal);
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 16px;
+    }
+
+    .swatch {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(31, 74, 74, 0.12);
+      background: var(--white);
+    }
+
+    .swatch-color {
+      height: 100px;
+      display: flex;
+      align-items: flex-end;
+      padding: 12px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .swatch-info { padding: 12px 14px; }
+    .swatch-name { font-weight: 700; font-size: 14px; color: var(--text); }
+    .swatch-role { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid rgba(31, 74, 74, 0.08);
+      font-size: 0.95rem;
+    }
+
+    th {
+      background: var(--teal);
+      color: var(--white);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    ul.clean-list { list-style: none; }
+    ul.clean-list li {
+      padding: 7px 0;
+      border-bottom: 1px dashed rgba(31, 74, 74, 0.12);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <span>.nexus Agent OS · Official Website Data Only (No Invented Info)</span>
+    <span class="badge">Luisa Coffee Ecosystem</span>
+  </div>
+
+  <div class="container">
+    <header class="hero">
+      <div class="eyebrow">Leading the Third Wave of Coffee in Miami · Official Brand Identity</div>
+      <h1>Luisa Coffee &amp; Mobile Carts</h1>
+      <p class="hero-sub">
+        One specialty coffee, three ways to meet it: a handcrafted cart for your event, a machine for your office, and beans roasted at origin in Colombia for your home.
+      </p>
+      <div class="site-links">
+        <a class="site-pill" href="https://luisacoffee.com" target="_blank">luisacoffee.com</a>
+        <a class="site-pill" href="https://miamicoffeecart.com" target="_blank">miamicoffeecart.com</a>
+        <a class="site-pill" href="https://miamimatchacart.com" target="_blank">miamimatchacart.com</a>
+        <a class="site-pill" href="https://miamihotchocolatecart.com" target="_blank">miamihotchocolatecart.com</a>
+        <a class="site-pill" href="https://miamirefresercart.com" target="_blank">miamirefresercart.com</a>
+        <a class="site-pill" href="https://miamicoffeeservices.com" target="_blank">miamicoffeeservices.com</a>
+        <a class="site-pill" href="https://miamicoffeelab.com" target="_blank">miamicoffeelab.com</a>
+      </div>
+      <div class="hero-intro">
+        <div class="eyebrow" style="margin-bottom: 6px;">09 · Brand Introduction (From Official Websites)</div>
+        <strong>Miami Coffee Cart</strong>, <strong>Miami Matcha Cart</strong>, <strong>Miami Hot Chocolate Cart</strong>, and <strong>Miami Refresher Cart</strong> are services of <strong>Luisa Coffee</strong> (<code>https://luisacoffee.com</code>), providing mobile specialty beverage carts and professional baristas for weddings, corporate events, trade shows, brand activations, schools, universities, nonprofits, and private parties across <strong>Miami-Dade, Broward, and Palm Beach counties</strong>. We buy green 100% Arabica beans directly at origin, roast them ourselves in Colombia, and serve them alongside ceremonial-grade matcha, craft refreshers, and rich hot chocolate topped with shaved chocolate and gold flake.
+      </div>
+    </header>
+
+    <section>
+      <div class="sec-header">
+        <span class="sec-num">01</span>
+        <h2>Brand Ecosystem &amp; Contact Channels</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Miami Coffee Cart</h3>
+          <p>Professional Italian espresso machines, freshly roasted Colombian beans, and <strong>Luisa Moments</strong> (live photo wall &amp; guestbook included).</p>
+          <p style="margin-top:10px; font-size:13px; font-weight:600;">📧 cart@luisacoffee.com<br>📞 (786) 530-2517</p>
+        </div>
+        <div class="card">
+          <h3>Miami Matcha Cart</h3>
+          <p>Ceremonial-grade matcha prepared fresh on-site: Iced Matcha Lattes, Hot Matcha Lattes, Strawberry Matcha, and oat, almond, or coconut milk.</p>
+          <p style="margin-top:10px; font-size:13px; font-weight:600;">📧 matcha@luisacoffee.com<br>📞 (786) 530-2517</p>
+        </div>
+        <div class="card">
+          <h3>Miami Hot Chocolate Cart</h3>
+          <p>Classic &amp; spiced hot chocolate topped with shaved chocolate and gold flake, plus dairy-free milk options. Pairable with Coffee Cart.</p>
+          <p style="margin-top:10px; font-size:13px; font-weight:600;">📧 hotchocolate@luisacoffee.com<br>📞 (786) 530-2517</p>
+        </div>
+        <div class="card">
+          <h3>Miami Refresher Cart</h3>
+          <p>Craft fruit refreshers, herbal infusions, sparkling iced teas, and cold-pressed citrus mocktails for vibrant day events and luxury activations.</p>
+          <p style="margin-top:10px; font-size:13px; font-weight:600;">📧 refresher@luisacoffee.com<br>📞 (786) 530-2517</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-header">
+        <span class="sec-num">02</span>
+        <h2>Typography (Loaded from Website Head Tags)</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="eyebrow">Headlines &amp; Display (miamicoffeecart.com)</div>
+          <h3 style="font-family: var(--font-display); font-size: 2rem;">Playfair Display (400, 700, 900 Italic)</h3>
+          <p style="font-size: 0.92rem; color: var(--text-light);"> paired with Georgia serif headings on miamimatchacart.com.</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">UI &amp; Body Copy (miamicoffeecart.com)</div>
+          <h3 style="font-family: var(--font-body); font-size: 1.6rem; font-weight: 700;">Inter (300, 400, 500, 600, 700)</h3>
+          <p style="font-size: 0.92rem; color: var(--text-light);">Clean geometric sans-serif used for navigation, specs, and service descriptions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-header">
+        <span class="sec-num">03</span>
+        <h2>Exact Website Color Palette (CSS HEX Variables)</h2>
+      </div>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #F97316; color: #fff;">#F97316</div>
+          <div class="swatch-info">
+            <div class="swatch-name">Coffee Orange CTA</div>
+            <div class="swatch-role">miamicoffeecart.com Accent</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #1f4a4a; color: #fff;">#1F4A4A</div>
+          <div class="swatch-info">
+            <div class="swatch-name">--teal</div>
+            <div class="swatch-role">miamimatchacart.com Primary</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #6b8f3a; color: #fff;">#6B8F3A</div>
+          <div class="swatch-info">
+            <div class="swatch-name">--green</div>
+            <div class="swatch-role">Matcha Green Accent</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #e0a83f; color: #143232;">#E0A83F</div>
+          <div class="swatch-info">
+            <div class="swatch-name">--mustard</div>
+            <div class="swatch-role">Warm Gold Highlight</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #faf7f0; color: #22322f;">#FAF7F0</div>
+          <div class="swatch-info">
+            <div class="swatch-name">--cream</div>
+            <div class="swatch-role">Primary Surface Background</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #22322f; color: #fff;">#22322F</div>
+          <div class="swatch-info">
+            <div class="swatch-name">--text</div>
+            <div class="swatch-role">Primary Dark Copy</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-header">
+        <span class="sec-num">04 &amp; 05</span>
+        <h2>Official Drink Menu &amp; Quick Specs</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Espresso &amp; Flavored Lattes</h3>
+          <ul class="clean-list">
+            <li>Espresso, Americano, Cappuccino, Latte, Macchiato, Cortado</li>
+            <li>Vanilla Latte, Caramel Latte, Hazelnut Latte</li>
+            <li>Mocha &amp; White Chocolate Mocha</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Specialty, Matcha &amp; Cocoa</h3>
+          <ul class="clean-list">
+            <li>Iced Coffee, Cold Brew, Nitro Cold Brew, Chai Latte</li>
+            <li>Ceremonial Iced Matcha, Hot Matcha &amp; Strawberry Matcha</li>
+            <li>Classic &amp; Spiced Hot Chocolate (shaved chocolate &amp; gold flake)</li>
+            <li>Dairy, Oat, Almond &amp; Coconut Milk</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Quick Specs &amp; Pricing</h3>
+          <ul class="clean-list">
+            <li><strong>Starting Price:</strong> $700 (2 hours, 1 barista, up to 50 guests)</li>
+            <li><strong>Power:</strong> Standard 120V outlet</li>
+            <li><strong>Space:</strong> At least 5&times;5 ft area</li>
+            <li><strong>Branding:</strong> Foam, cups &amp; cart wraps</li>
+            <li><strong>Areas:</strong> Miami-Dade, Broward &amp; Palm Beach</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-header">
+        <span class="sec-num">06</span>
+        <h2>Trusted By Teams At (From miamicoffeecart.com)</h2>
+      </div>
+      <div class="card">
+        <p style="font-weight: 600; color: var(--teal);">
+          Mana Tech &middot; Co-Work &middot; City of Miami Beach &middot; Merrill (A Bank of America Company) &middot; ClareMedica &middot; Morgan &middot; Saks Fifth Avenue &middot; Marsh Re &middot; Betterfly &middot; Financial Design &middot; Riviera School &middot; Cargill
+        </p>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

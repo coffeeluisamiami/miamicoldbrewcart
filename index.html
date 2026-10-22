@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miami Cold Brew Cart | Luxury Mobile Beverage Catering for Unforgettable Events</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-body: #faf8f5;
+      --bg-white: #ffffff;
+      --primary: #e07a16;
+      --primary-hover: #c46409;
+      --primary-light: #fff5eb;
+      --matcha: #15803d;
+      --matcha-bg: #f0fdf4;
+      --berry: #be185d;
+      --berry-bg: #fdf2f8;
+      --chocolate: #78350f;
+      --chocolate-bg: #fef3c7;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --border: #f1ede6;
+      --border-dark: #e2dcd3;
+      --shadow-sm: 0 4px 12px rgba(0,0,0,0.04);
+      --shadow-md: 0 10px 30px rgba(0,0,0,0.07);
+      --shadow-lg: 0 20px 45px rgba(224, 122, 22, 0.12);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Top Announcement Bar */
+    .top-announcement {
+      background: linear-gradient(90deg, #ea580c, #f59e0b);
+      color: #fff;
+      text-align: center;
+      padding: 0.55rem 1rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.15rem 3rem;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--border-dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #0f172a;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-menu a {
+      color: #475569;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-menu a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 0.65rem 1.4rem;
+      border-radius: 9999px;
+      font-weight: 800;
+      box-shadow: 0 4px 15px rgba(224, 122, 22, 0.3);
+      transition: transform 0.15s, background 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-hover) !important;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 5rem 1.5rem 5.5rem;
+      background: radial-gradient(circle at 50% 0%, #fff7ed 0%, #faf8f5 70%);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fff;
+      border: 1px solid #fed7aa;
+      padding: 0.45rem 1.2rem;
+      border-radius: 9999px;
+      color: #c2410c;
+      font-size: 0.88rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero h1 {
+      font-size: 3.8rem;
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      color: #0f172a;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 .highlight {
+      color: var(--primary);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.28rem;
+      color: #475569;
+      max-width: 780px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .btn-main {
+      background: var(--primary);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 800;
+      padding: 1rem 2.4rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(224, 122, 22, 0.35);
+      transition: all 0.2s;
+    }
+
+    .btn-main:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(224, 122, 22, 0.45);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: #0f172a;
+      font-size: 1.1rem;
+      font-weight: 800;
+      padding: 1rem 2.2rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      border: 1px solid var(--border-dark);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+    }
+
+    /* Trust Stats Ribbon */
+    .trust-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      background: #fff;
+      border: 1px solid var(--border-dark);
+      border-radius: 20px;
+      padding: 1.8rem 2.5rem;
+      max-width: 950px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-md);
+    }
+
+    .trust-box {
+      text-align: center;
+    }
+
+    .trust-val {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 0.15rem;
+    }
+
+    .trust-txt {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.7rem; }
+      .trust-ribbon { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .hero-buttons { flex-direction: column; }
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-head .tag {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-head h2 {
+      font-size: 2.7rem;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-head p {
+      font-size: 1.15rem;
+      color: #64748b;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Anchor Brands Banner */
+    .anchor-card-bar {
+      background: #fff;
+      border: 2px dashed #fed7aa;
+      border-radius: 22px;
+      padding: 1.8rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .anchor-info strong {
+      font-size: 1.15rem;
+      color: #0f172a;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .anchor-info span {
+      color: #64748b;
+      font-size: 0.92rem;
+    }
+
+    .anchor-links-wrap {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .anchor-chip {
+      background: var(--primary-light);
+      border: 1px solid #fdba74;
+      color: #9a3412;
+      padding: 0.65rem 1.25rem;
+      border-radius: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .anchor-chip:hover {
+      background: #fed7aa;
+      transform: translateY(-2px);
+    }
+
+    /* Visual Event Gallery Grid (Real Photos) */
+    .real-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 6rem;
+    }
+
+    @media (max-width: 960px) {
+      .real-gallery-grid { grid-template-columns: 1fr; }
+    }
+
+    .real-photo-card {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-dark);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .real-photo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .real-photo-card .photo-frame {
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .real-photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .real-photo-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .badge-event-type {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(15, 23, 42, 0.85);
+      color: #fff;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      backdrop-filter: blur(4px);
+    }
+
+    .real-photo-card .card-caption {
+      padding: 1.5rem;
+    }
+
+    .card-caption h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-caption p {
+      font-size: 0.92rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    /* Beverage Concepts Cards (Matcha, Hot Chocolate, Refresher, Cold Brew) */
+    .menu-concepts-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 6rem;
+    }
+
+    @media (max-width: 1080px) {
+      .menu-concepts-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .menu-concepts-grid { grid-template-columns: 1fr; }
+    }
+
+    .menu-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem 1.75rem;
+      border: 1px solid var(--border-dark);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary);
+    }
+
+    .menu-card.featured-concept {
+      border: 2px solid var(--primary);
+      background: #fffcf8;
+    }
+
+    .concept-emoji {
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .emoji-coldbrew { background: #fed7aa; }
+    .emoji-matcha { background: #bbf7d0; }
+    .emoji-chocolate { background: #fef08a; }
+    .emoji-refresher { background: #fbcfe8; }
+
+    .menu-card h4 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-card p {
+      font-size: 0.92rem;
+      color: #64748b;
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .menu-card a {
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Event Booking Card Section */
+    .booking-wrapper {
+      background: #fff;
+      border-radius: 28px;
+      border: 1px solid var(--border-dark);
+      padding: 3.5rem;
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      position: relative;
+    }
+
+    @media (max-width: 960px) {
+      .booking-wrapper {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+        gap: 2rem;
+      }
+    }
+
+    .booking-left h2 {
+      font-size: 2.3rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+      margin-bottom: 0.6rem;
+    }
+
+    .booking-left p.sub {
+      color: #64748b;
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 600px) {
+      .form-row-2 { grid-template-columns: 1fr; }
+    }
+
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #334155;
+      margin-bottom: 0.45rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 12px;
+      color: #0f172a;
+      font-size: 0.95rem;
+      font-weight: 500;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      background: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(224, 122, 22, 0.15);
+    }
+
+    .btn-submit-lead {
+      width: 100%;
+      padding: 1.15rem;
+      background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%);
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 900;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(234, 88, 12, 0.35);
+      transition: all 0.2s;
+    }
+
+    .btn-submit-lead:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(234, 88, 12, 0.45);
+    }
+
+    .alert-success {
+      display: none;
+      padding: 1.25rem;
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+      color: #166534;
+      border-radius: 14px;
+      margin-top: 1.25rem;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* Booking Right Details */
+    .booking-right {
+      background: #fffbf7;
+      border: 1px solid #fed7aa;
+      border-radius: 20px;
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .why-us-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .why-icon {
+      background: #ffedd5;
+      color: #c2410c;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .why-us-item strong {
+      display: block;
+      font-size: 1.05rem;
+      color: #0f172a;
+      margin-bottom: 0.2rem;
+    }
+
+    .why-us-item p {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.45;
+    }
+
+    .quote-guarantee {
+      background: #fff;
+      border: 1px solid #fdba74;
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #9a3412;
+    }
+
+    /* Floating Chatbot */
+    .chatbot-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: linear-gradient(135deg, #ea580c, #f59e0b);
+      color: #fff;
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      border: none;
+      box-shadow: 0 10px 30px rgba(234, 88, 12, 0.45);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      z-index: 1000;
+      transition: transform 0.2s;
+    }
+
+    .chatbot-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .chatbot-panel {
+      position: fixed;
+      bottom: 6.8rem;
+      right: 2rem;
+      width: 380px;
+      height: 520px;
+      background: #fff;
+      border: 1px solid var(--border-dark);
+      border-radius: 22px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      display: none;
+      flex-direction: column;
+      z-index: 1000;
+      overflow: hidden;
+    }
+
+    .chatbot-panel.open {
+      display: flex;
+    }
+
+    .chat-head {
+      background: #0f172a;
+      color: #fff;
+      padding: 1.15rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-head h3 {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .chat-head small {
+      color: #4ade80;
+      font-weight: 700;
+    }
+
+    .chat-close-btn {
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    .chat-body {
+      flex: 1;
+      padding: 1.2rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      font-size: 0.92rem;
+      background: #faf8f5;
+    }
+
+    .chat-msg {
+      max-width: 84%;
+      padding: 0.75rem 1rem;
+      border-radius: 16px;
+      line-height: 1.45;
+    }
+
+    .chat-msg.bot {
+      background: #fff;
+      color: #1e293b;
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .chat-msg.user {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-footer {
+      padding: 0.85rem;
+      background: #fff;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .chat-footer input {
+      flex: 1;
+      padding: 0.7rem 0.9rem;
+      background: #f8fafc;
+    }
+
+    .chat-footer button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0 1.2rem;
+      border-radius: 10px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .chat-footer button:hover {
+      background: var(--primary-hover);
+    }
+
+    .chat-chips {
+      display: flex;
+      gap: 0.45rem;
+      padding: 0.55rem 0.85rem;
+      overflow-x: auto;
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      scrollbar-width: none;
+    }
+
+    .chat-chips::-webkit-scrollbar {
+      display: none;
+    }
+
+    .chat-chip {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .chat-chip:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .chat-typing {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0.6rem 0.9rem;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      border-bottom-left-radius: 4px;
+      align-self: flex-start;
+      margin-bottom: 0.3rem;
+    }
+
+    .chat-typing span {
+      width: 6px;
+      height: 6px;
+      background: #94a3b8;
+      border-radius: 50%;
+      animation: chatBounce 1.2s infinite ease-in-out;
+    }
+
+    .chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+    .chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes chatBounce {
+      0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+
+    .chatbot-badge-pulse {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      background: #22c55e;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 900;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      border: 2px solid #fff;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.7);
+    }
+
+    .lead-captured-card {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      padding: 0.65rem 0.85rem;
+      border-radius: 12px;
+      margin-top: 0.5rem;
+      font-size: 0.82rem;
+      color: #166534;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .chat-interactive-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .chat-interactive-title {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .chat-options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+    }
+
+    .chat-opt-btn {
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      padding: 0.5rem 0.65rem;
+      border-radius: 8px;
+      font-size: 0.77rem;
+      font-weight: 700;
+      color: #1e293b;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .chat-opt-btn:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .chat-memory-tag {
+      font-size: 0.68rem;
+      background: rgba(249, 115, 22, 0.15);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      color: #ea580c;
+      padding: 0.2rem 0.45rem;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-weight: 800;
+      margin-top: 0.25rem;
+    }
+
+    .chat-calc-card {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #fff;
+      padding: 0.85rem;
+      border-radius: 12px;
+      margin-top: 0.5rem;
+      border: 1px solid #334155;
+    }
+
+    .chat-calc-card .calc-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .chat-calc-card .calc-price {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #fb923c;
+    }
+
+    /* Footer */
+    footer {
+      background: #fff;
+      border-top: 1px solid var(--border-dark);
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.92rem;
+    }
+
+    .footer-links-row {
+      display: flex;
+      justify-content: center;
+      gap: 2.2rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links-row a {
+      color: #334155;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer-links-row a:hover {
+      color: var(--primary);
+    }
+  </style>
+
+  <!-- Firebase Compat SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <!-- Announcement -->
+  <div class="top-announcement">
+    🌴 Miami & South Florida Event Season: Reserve Your Cart 2-4 Weeks in Advance for Guaranteed Availability!
+  </div>
+
+  <!-- Header -->
+  <header>
+    <a href="#" class="logo">
+      ☀️ Miami Cold Brew <span>Cart</span>
+    </a>
+    <nav class="nav-menu">
+      <a href="https://miamicoffeecart.com" target="_blank">Miami Coffee Cart</a>
+      <a href="https://luisacoffee.com" target="_blank">Luisa Coffee</a>
+      <a href="#gallery">Live Photos</a>
+      <a href="#concepts">Menu Concepts</a>
+      <a href="#book-event" class="nav-cta">Check Availability</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="pill-badge">
+        ✨ Brickell • Wynwood • Miami Beach • Palm Beach
+      </div>
+      <h1>Make Your Next Event <br><span class="highlight">Unforgettable & Delicious</span></h1>
+      <p>Luxury mobile carts pouring artisanal 18-hour cold brew, velvety nitro on tap, ceremonial matcha, and custom branded cups. Built for high-volume crowds with pure joy in every pour.</p>
+
+      <div class="hero-buttons">
+        <a href="#book-event" class="btn-main">Reserve Your Cart Today →</a>
+        <a href="#gallery" class="btn-secondary">View Real Events & Setups ↓</a>
+      </div>
+
+      <!-- Trust Ribbon -->
+      <div class="trust-ribbon">
+        <div class="trust-box">
+          <div class="trust-val">300+</div>
+          <div class="trust-txt">Fast Drinks / Hour</div>
+        </div>
+        <div class="trust-box">
+          <div class="trust-val">100%</div>
+          <div class="trust-txt">Custom Cart Branding</div>
+        </div>
+        <div class="trust-box">
+          <div class="trust-val">18h</div>
+          <div class="trust-txt">Cold Brew Steeped</div>
+        </div>
+        <div class="trust-box">
+          <div class="trust-val">5.0 ★</div>
+          <div class="trust-txt">Verified Client Love</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- Anchor Brands Highlight Banner -->
+    <div class="anchor-card-bar">
+      <div class="anchor-info">
+        <strong>Rooted in Miami Coffee Excellence</strong>
+        <span>Part of the trusted South Florida coffee cart and roastery ecosystem:</span>
+      </div>
+      <div class="anchor-links-wrap">
+        <a href="https://miamicoffeecart.com" target="_blank" class="anchor-chip">
+          ☕ Miami Coffee Cart <span>(Full Espresso Bars)</span>
+        </a>
+        <a href="https://luisacoffee.com" target="_blank" class="anchor-chip">
+          🌿 Luisa Coffee <span>(Specialty Roastery)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Live Event Photos Section -->
+    <div class="section-head" id="gallery">
+      <span class="tag">Real Events • Real Hospitality</span>
+      <h2>See Our Mobile Carts in Action</h2>
+      <p>From high-energy corporate trade shows to luxury wedding receptions and branded pop-ups across South Florida.</p>
+    </div>
+
+    <div class="real-gallery-grid">
+      <!-- 1. Corporate Event -->
+      <div class="real-photo-card">
+        <div class="photo-frame">
+          <span class="badge-event-type">Corporate Summits</span>
+          <img src="images/coffee-cart-event.jpg" alt="Corporate event coffee cart in Miami">
+        </div>
+        <div class="card-caption">
+          <h3>High-Flow Corporate Conferences</h3>
+          <p>Dual-tap draft systems pour creamy nitro cold brew in under 8 seconds. Zero waiting lines during key meeting breaks.</p>
+        </div>
+      </div>
+
+      <!-- 2. Dual Coffee + Matcha -->
+      <div class="real-photo-card">
+        <div class="photo-frame">
+          <span class="badge-event-type">Multi-Station Lounges</span>
+          <img src="images/coffee-matcha-cart.jpg" alt="Coffee and matcha dual mobile cart">
+        </div>
+        <div class="card-caption">
+          <h3>Coffee & Matcha Dual Bar</h3>
+          <p>Pair cold brew with ceremonial matcha and espresso for the ultimate multi-beverage experience your guests will post on Instagram.</p>
+        </div>
+      </div>
+
+      <!-- 3. Weddings & Celebrations -->
+      <div class="real-photo-card">
+        <div class="photo-frame">
+          <span class="badge-event-type">Weddings & Galas</span>
+          <img src="images/coffee-bar-wedding.jpg" alt="Luxury wedding mobile coffee bar">
+        </div>
+        <div class="card-caption">
+          <h3>Luxury Weddings & Celebrations</h3>
+          <p>Sophisticated cart aesthetic that complements upscale venue decor, from Wynwood lofts to five-star beachfront resorts.</p>
+        </div>
+      </div>
+
+      <!-- 4. Luisa Coffee Sourcing -->
+      <div class="real-photo-card">
+        <div class="photo-frame">
+          <span class="badge-event-type">Artisanal Craft</span>
+          <img src="images/coffee-catering-luisa.jpg" alt="Luisa Coffee catering setup">
+        </div>
+        <div class="card-caption">
+          <h3>Local Luisa Coffee Roastery</h3>
+          <p>Direct single-origin sourcing and master roasting guarantee smooth, chocolatey, low-acidity cold brew perfection.</p>
+        </div>
+      </div>
+
+      <!-- 5. Custom Cups -->
+      <div class="real-photo-card">
+        <div class="photo-frame">
+          <span class="badge-event-type">Sponsor Activations</span>
+          <img src="images/custom-cups.png" alt="Custom branded cups for events">
+        </div>
+        <div class="card-caption">
+          <h3>Custom Branded Cups & Menus</h3>
+          <p>Put your company or sponsor logo directly into every guest's hands for maximum organic brand exposure.</p>
+        </div>
+      </div>
+
+      <!-- 6. Cart Branding -->
+      <div class="real-photo-card">
+        <div class="photo-frame">
+          <span class="badge-event-type">Full Customization</span>
+          <img src="images/cart-branding.png" alt="Custom cart front disc branding">
+        </div>
+        <div class="card-caption">
+          <h3>Bespoke Cart Medallions</h3>
+          <p>Custom magnetic front medallions and cart wrapping to seamlessly match your event theme or color palette.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- The 4 Beverage Concepts -->
+    <div class="section-head" id="concepts">
+      <span class="tag">Tailored Menus</span>
+      <h2>Choose Your Favorite Cart Station</h2>
+      <p>Pick one concept or bundle multiple carts together for the complete experiential beverage lounge.</p>
+    </div>
+
+    <div class="menu-concepts-grid">
+      <!-- 1. Cold Brew -->
+      <div class="menu-card featured-concept">
+        <div class="concept-emoji emoji-coldbrew">❄️</div>
+        <h4>Miami Cold Brew Cart</h4>
+        <p>18-hour cold extraction. Tap nitro infused microfoam, vanilla sweet cream cold foam, and single-origin ice refreshers.</p>
+        <a href="#book-event">Select Cold Brew →</a>
+      </div>
+
+      <!-- 2. Matcha -->
+      <div class="menu-card">
+        <div class="concept-emoji emoji-matcha">🍵</div>
+        <h4>Miami Matcha Cart</h4>
+        <p>Ceremonial Japanese Uji matcha, strawberry cloud matcha, lavender honey, and creamy oat milk foams.</p>
+        <a href="#book-event">Select Matcha →</a>
+      </div>
+
+      <!-- 3. Hot Chocolate -->
+      <div class="menu-card">
+        <div class="concept-emoji emoji-chocolate">🍫</div>
+        <h4>Hot Chocolate Cart</h4>
+        <p>Decadent European melted chocolate, spiced cinnamon Mexican cocoa, and live torch-fired marshmallow skewers.</p>
+        <a href="#book-event">Select Chocolate →</a>
+      </div>
+
+      <!-- 4. Refresher -->
+      <div class="menu-card">
+        <div class="concept-emoji emoji-refresher">🌺</div>
+        <h4>Miami Refresher Cart</h4>
+        <p>Sparkling hibiscus berry spritzers, passionfruit mint refreshers, and crisp tropical fruit mocktails.</p>
+        <a href="#book-event">Select Refresher →</a>
+      </div>
+    </div>
+
+    <!-- Booking Form Section -->
+    <div class="booking-wrapper" id="book-event">
+      <div class="booking-left">
+        <h2>Reserve Your Cart Today</h2>
+        <p class="sub">Dates book quickly throughout Miami's high season. Share your event details below to receive pricing and availability in hours.</p>
+
+        <form id="contactForm">
+          <div class="form-row-2">
+            <div class="input-group">
+              <label for="name">Full name *</label>
+              <input type="text" id="name" name="name" placeholder="e.g. Marcelo Cardenas" required>
+            </div>
+            <div class="input-group">
+              <label for="businessName">Company / Host name *</label>
+              <input type="text" id="businessName" name="businessName" placeholder="e.g. Maxtron LLC or Private Host" required>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="input-group">
+              <label for="email">Email address *</label>
+              <input type="email" id="email" name="email" placeholder="mc@luisacoffee.com" required>
+            </div>
+            <div class="input-group">
+              <label for="eventLocation">Event location / Venue (Lugar) *</label>
+              <input type="text" id="eventLocation" name="eventLocation" placeholder="e.g. Brickell Tower, Miami Beach, Wynwood" required>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="input-group">
+              <label for="eventDate">Event date (Fecha) *</label>
+              <input type="date" id="eventDate" name="eventDate" required>
+            </div>
+            <div class="input-group">
+              <label for="duration">Service duration (Duración) *</label>
+              <select id="duration" name="duration" required>
+                <option value="2 Hours (Cocktail/Reception)">2 Hours (Cocktail / Reception)</option>
+                <option value="3 Hours (Recommended Event Standard)" selected>3 Hours (Recommended Event Standard)</option>
+                <option value="4 Hours (Extended Summit/Wedding)">4 Hours (Extended Summit / Wedding)</option>
+                <option value="Full Day / Multi-Day Activation">Full Day / Multi-Day Activation</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="input-group">
+              <label for="guestCount">Estimated guests (Personas) *</label>
+              <select id="guestCount" name="guestCount" required>
+                <option value="25-50 guests">25 - 50 guests</option>
+                <option value="50-100 guests">50 - 100 guests</option>
+                <option value="100-200 guests" selected>100 - 200 guests</option>
+                <option value="200-500 guests">200 - 500 guests</option>
+                <option value="500+ guests">500+ guests (Large Summit / Festival)</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="helpWith">Beverage theme & bar concept (Temática) *</label>
+              <select id="helpWith" name="helpWith" required>
+                <option value="Signature Nitro Cold Brew Bar (Nitro & Iced Specialty Lattes)">Signature Nitro Cold Brew Bar (Nitro & Iced Specialty)</option>
+                <option value="Full Specialty Espresso Bar (Hot Lattes, Cortados & Art)">Full Specialty Espresso Bar (Hot Lattes, Cortados & Art)</option>
+                <option value="Ceremonial Matcha & Tropical Refreshers Bar">Ceremonial Matcha & Tropical Refreshers Bar</option>
+                <option value="Winter Gourmet Hot Chocolate & Warm Cocoa Bar">Winter Gourmet Hot Chocolate & Warm Cocoa Bar</option>
+                <option value="Custom Multi-Bar Combination (Cold Brew + Espresso + Matcha)">Custom Multi-Bar (Cold Brew + Espresso + Matcha)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="input-group">
+              <label for="budget">Estimated budget range (Inversión) *</label>
+              <select id="budget" name="budget" required>
+                <option value="Under $1,000">Under $1,000 (Express Cart Setup)</option>
+                <option value="$1,000-$2,500" selected>$1,000 - $2,500 (Standard All-Inclusive)</option>
+                <option value="$2,500-$5,000">$2,500 - $5,000 (High-Volume Multi-Bar)</option>
+                <option value="$5,000+">$5,000+ (Festival / Multi-Day Corporate)</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="bottleneck">Event vision & special requests (Prioridades) *</label>
+              <input type="text" id="bottleneck" name="bottleneck" placeholder="e.g. Fast line flow, custom printed cups, indoor setup..." required>
+            </div>
+          </div>
+
+          <!-- Compatibility fields -->
+          <input type="hidden" id="industry" name="industry" value="">
+          <input type="hidden" id="timeline" name="timeline" value="">
+
+          <button type="submit" class="btn-submit-lead" id="submitBtn">Submit Event Booking Request →</button>
+
+          <div class="alert-success" id="successAlert">
+            🎉 <strong>Inquiry Received!</strong> Our team and AI agents are preparing your tailored Miami Cold Brew Cart proposal right now.
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Column: Reassurance & Perks -->
+      <div class="booking-right">
+        <div>
+          <h3 style="font-size: 1.35rem; font-weight: 900; color: #0f172a; margin-bottom: 1.5rem;">The Miami Event Experience</h3>
+
+          <div class="why-us-item">
+            <div class="why-icon">⚡</div>
+            <div>
+              <strong>Lightning-Fast Flow</strong>
+              <p>Nitro cold brew and pre-infused teas pour instantly. No conference line fatigue.</p>
+            </div>
+          </div>
+
+          <div class="why-us-item">
+            <div class="why-icon">🎨</div>
+            <div>
+              <strong>Total Brand Alignment</strong>
+              <p>Custom printed cups and cart medallions to make your brand the star of the show.</p>
+            </div>
+          </div>
+
+          <div class="why-us-item">
+            <div class="why-icon">🔌</div>
+            <div>
+              <strong>Turn-Key & Self-Contained</strong>
+              <p>Quiet operation, compact footprint, fits into standard passenger elevators and lobbies.</p>
+            </div>
+          </div>
+
+          <div class="why-us-item">
+            <div class="why-icon">❤️</div>
+            <div>
+              <strong>Passionate Local Baristas</strong>
+              <p>Friendly, energetic hospitality staff who treat your guests like VIPs.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-guarantee">
+          ⚡ <strong>Same-Day Response Guarantee</strong><br>
+          <span style="font-weight: 500; font-size: 0.85rem;">Inquiries submitted today get priority date holds.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Chatbot Widget -->
+  <button class="chatbot-btn" id="chatToggle" aria-label="Open chat assistant" style="position: fixed; bottom: 2rem; right: 2rem;">
+    💬
+    <span class="chatbot-badge-pulse">AI</span>
+  </button>
+
+  <div class="chatbot-panel" id="chatWindow">
+    <div class="chat-head">
+      <div>
+        <div style="display:flex; align-items:center; gap:0.4rem;">
+          <h3>Miami Cold Brew Assistant</h3>
+          <span class="chat-memory-tag" style="background: rgba(34, 197, 94, 0.2); border-color: #22c55e; color: #4ade80; font-size: 0.62rem; padding: 0.15rem 0.4rem;">🧠 Nexus Memory</span>
+        </div>
+        <small>● Online • Event & Catering Concierge</small>
+      </div>
+      <button class="chat-close-btn" id="chatClose">✕</button>
+    </div>
+    <div class="chat-body" id="chatMessages">
+      <div class="chat-msg bot">
+        Hello! 👋 Welcome to <strong>Miami Cold Brew Cart</strong>. I'm your AI event concierge powered by the <em>Luisa Coffee & Miami Coffee Cart</em> ecosystem.<br><br>
+        Planning a corporate summit, wedding, or brand activation in South Florida? You can <strong>simulate an instant quote</strong> or explore our boutique mobile setups:
+        
+        <div class="chat-interactive-box">
+          <div class="chat-interactive-title">⚡ Quick Options</div>
+          <div class="chat-options-grid">
+            <button type="button" class="chat-opt-btn" onclick="startInteractiveQuote()">📊 Instant Quote Calculator</button>
+            <button type="button" class="chat-opt-btn" onclick="handleUserMessage('Tell me about your coffee origin and Luisa Coffee')">🌱 Luisa Coffee Origin</button>
+            <button type="button" class="chat-opt-btn" onclick="handleUserMessage('Which companies and corporate clients trust you?')">🏆 Trusted Clients</button>
+            <button type="button" class="chat-opt-btn" onclick="handleUserMessage('What are the cart technical specs and power requirements?')">🔌 Cart Specs & Power</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick action chips -->
+    <div class="chat-chips" id="chatChips">
+      <button type="button" class="chat-chip" data-action="quote">⚡ Quote in 3 Clicks</button>
+      <button type="button" class="chat-chip" data-query="What cart packages do you offer and what does each include?">☕ Cart Packages</button>
+      <button type="button" class="chat-chip" data-query="Which corporate clients and enterprise brands trust you?">🏢 Top Clients</button>
+      <button type="button" class="chat-chip" data-query="What are the dimensions and electrical power requirements?">📐 Technical Specs</button>
+      <button type="button" class="chat-chip" data-query="How can I contact you directly via phone or WhatsApp?">📞 Phone & Contact</button>
+    </div>
+
+    <form class="chat-footer" id="chatForm">
+      <input type="text" id="chatInput" placeholder="Ask a question or enter your email..." required autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links-row">
+      <a href="https://miamicoffeecart.com" target="_blank">Miami Coffee Cart</a>
+      <a href="https://luisacoffee.com" target="_blank">Luisa Coffee</a>
+      <a href="https://miamimatchacart.com" target="_blank">Miami Matcha Cart</a>
+      <a href="https://miamihotchocolatecart.com" target="_blank">Miami Hot Chocolate Cart</a>
+      <a href="https://miamirefresercart.com" target="_blank">Miami Refresher Cart</a>
+      <a href="#book-event">Book Event</a>
+    </div>
+    <p>© 2026 Miami Cold Brew Cart • An Experiential Branch of Luisa Coffee & Miami Coffee Cart • Serving South Florida.</p>
+  </footer>
+
+  <script>
+    // --- Firebase Configuration ---
+    const firebaseConfig = {
+      apiKey: "AIzaSyCigaGarSwaOj_RX8VEmoIEDwa2RL0moTM",
+      authDomain: "miamicoldbrewcart.firebaseapp.com",
+      projectId: "miamicoldbrewcart",
+      storageBucket: "miamicoldbrewcart.firebasestorage.app",
+      messagingSenderId: "585917755546",
+      appId: "1:585917755546:web:ac66c6a98f383689c4af23",
+      measurementId: "G-GMWKJ9KTZW"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // Contact Form
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const successAlert = document.getElementById('successAlert');
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Submitting to Firebase...";
+
+      const guestCount = document.getElementById('guestCount').value;
+      const eventLocation = document.getElementById('eventLocation').value.trim();
+      const eventDate = document.getElementById('eventDate').value;
+      const duration = document.getElementById('duration').value;
+      const concept = document.getElementById('helpWith').value;
+      const notes = document.getElementById('bottleneck').value.trim();
+
+      const formData = {
+        name: document.getElementById('name').value.trim(),
+        businessName: document.getElementById('businessName').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        eventLocation: eventLocation,
+        eventDate: eventDate,
+        duration: duration,
+        guestCount: guestCount,
+        helpWith: concept,
+        concept: concept,
+        industry: guestCount + " • " + eventLocation,
+        budget: document.getElementById('budget').value,
+        timeline: eventDate ? "Event Date: " + eventDate : "1-3 months",
+        bottleneck: notes + " (Location: " + eventLocation + " | Duration: " + duration + " | Guests: " + guestCount + ")",
+        notes: notes,
+        source: "miami_cold_brew_cart_booking",
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      };
+
+      try {
+        const docRef = await db.collection('contacts').add(formData);
+        console.log("Document successfully written with ID:", docRef.id);
+        successAlert.style.display = "block";
+        submitBtn.style.display = "none";
+        contactForm.reset();
+      } catch (error) {
+        console.error("Error saving document:", error);
+        alert("Error saving: " + error.message);
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Submit Request →";
+      }
+    });
+
+    // --- Enhanced AI Chatbot Concierge with Project Nexus Memory (English) ---
+    const chatToggle = document.getElementById('chatToggle');
+    const chatWindow = document.getElementById('chatWindow');
+    const chatClose = document.getElementById('chatClose');
+    const chatForm = document.getElementById('chatForm');
+    const chatInput = document.getElementById('chatInput');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatChips = document.getElementById('chatChips');
+
+    // Project Nexus & CSO Agent Memory (from .nexus/memory/context.json & .agent/cso-agent/business_profile.json)
+    const NEXUS_PROJECT_MEMORY = {
+      parentCompany: {
+        name: "Luisa Coffee",
+        url: "https://luisacoffee.com",
+        originStory: "We purchase 100% Arabica green beans directly at origin in Colombia, roast them ourselves, and bring them fresh to Miami. No middlemen, no shortcuts: the exact same specialty roast across every cart, corporate office, and retail bag.",
+        phone: "+1-786-530-2517",
+        officePhone: "+1-786-659-4164",
+        email: "cart@luisacoffee.com",
+        address: "Miami, FL 33130"
+      },
+      mobileCartEcosystem: [
+        { name: "Miami Cold Brew Cart", specialty: "Exclusive Nitro Cold Brew bars featuring nitrogen-infused cold tap cascades and artisan syrups.", url: "https://miamicoldbrewcart.com" },
+        { name: "Miami Coffee Cart", specialty: "Full Italian espresso bars, live latte art demonstrations, and 'Luisa Moments' live guestbook photo activations.", url: "https://miamicoffeecart.com" },
+        { name: "Miami Matcha Cart", specialty: "Ceremonial Uji matcha whisked fresh to order, strawberry matcha lattes, and organic plant-based milks.", url: "https://miamimatchacart.com" },
+        { name: "Miami Hot Chocolate Cart", specialty: "Gourmet Swiss/Belgian melted chocolate with hand-torched marshmallow toppings and edible gold flakes.", url: "https://miamihotchocolatecart.com" },
+        { name: "Miami Refresher Cart", specialty: "Handcrafted fruit refreshers, sparkling iced teas, and botanical herbal infusions.", url: "https://miamirefreshercart.com" }
+      ],
+      trustedClients: [
+        "Mana Tech", "Mana Wynwood", "Saks Fifth Avenue", "Merrill (A Bank of America Company)",
+        "City of Miami Beach", "Morgan", "ClareMedica", "Marsh Re", "Betterfly", "Cargill", "Riviera School"
+      ],
+      serviceAreas: [
+        "Miami-Dade (Brickell, Downtown, Wynwood, Coral Gables, Miami Beach, Doral)",
+        "Broward County (Fort Lauderdale, Hollywood)",
+        "Palm Beach County (Boca Raton, West Palm Beach)"
+      ],
+      specs: {
+        power: "Standard 120V household outlet (ultra-quiet, low power draw)",
+        space: "Compact 5x5 ft footprint",
+        mobility: "Fits effortlessly inside standard passenger elevators and conventional interior doors",
+        advanceTime: "2 to 4 weeks recommended for large events and weddings (priority holds for advance bookings)"
+      },
+      pricingTiers: {
+        tier50: { guests: "Up to 50 guests", price: "$750", hours: "2 hours", baristas: 1 },
+        tier100: { guests: "50 to 100 guests", price: "$950", hours: "3 hours", baristas: "1-2" },
+        tier150: { guests: "100 to 150 guests", price: "$1,200", hours: "3 hours", baristas: 2 },
+        tierCorporate: { guests: "200+ guests", price: "Custom Enterprise", hours: "3-4+ hours", baristas: "2+" }
+      }
+    };
+
+    // State of interactive quotation
+    let interactiveQuoteState = {
+      concept: null,
+      guests: null,
+      price: null,
+      location: null,
+      email: null
+    };
+
+    let conversationHistory = [];
+    let leadCapturedEmail = null;
+
+    chatToggle.addEventListener('click', () => {
+      chatWindow.classList.toggle('open');
+      if (chatWindow.classList.contains('open')) {
+        chatInput.focus();
+      }
+    });
+
+    chatClose.addEventListener('click', () => {
+      chatWindow.classList.remove('open');
+    });
+
+    // Chips clicks
+    if (chatChips) {
+      chatChips.addEventListener('click', (e) => {
+        const btn = e.target.closest('.chat-chip');
+        if (!btn) return;
+        const action = btn.getAttribute('data-action');
+        const query = btn.getAttribute('data-query');
+        if (action === 'quote') {
+          startInteractiveQuote();
+        } else if (query) {
+          handleUserMessage(query);
+        }
+      });
+    }
+
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const text = chatInput.value.trim();
+      if (!text) return;
+      chatInput.value = '';
+      handleUserMessage(text);
+    });
+
+    function showTypingIndicator() {
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'chat-typing';
+      typingDiv.id = 'chatTypingIndicator';
+      typingDiv.innerHTML = '<span></span><span></span><span></span>';
+      chatMessages.appendChild(typingDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function removeTypingIndicator() {
+      const indicator = document.getElementById('chatTypingIndicator');
+      if (indicator) indicator.remove();
+    }
+
+    function appendMessage(text, type, extraHtml = '') {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `chat-msg ${type}`;
+      msgDiv.innerHTML = text.replace(/\n/g, '<br>') + (extraHtml ? `<div style="margin-top:0.4rem;">${extraHtml}</div>` : '');
+      chatMessages.appendChild(msgDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // --- Interactive Wizard Functions in English (Exposed to Window) ---
+    window.startInteractiveQuote = function() {
+      showTypingIndicator();
+      setTimeout(() => {
+        removeTypingIndicator();
+        appendMessage(
+          `📊 <strong>Interactive Event Quote Calculator</strong><br>
+Select your preferred beverage cart experience:`,
+          'bot',
+          `<div class="chat-interactive-box">
+            <div class="chat-interactive-title">Step 1: Choose Your Cart</div>
+            <div class="chat-options-grid">
+              <button type="button" class="chat-opt-btn" onclick="selectInteractiveConcept('Signature Nitro Cold Brew Bar')">☕ Nitro Cold Brew</button>
+              <button type="button" class="chat-opt-btn" onclick="selectInteractiveConcept('Ceremonial Matcha & Refreshers')">🍵 Matcha Bar</button>
+              <button type="button" class="chat-opt-btn" onclick="selectInteractiveConcept('Specialty Espresso & Latte Art')">☕ Espresso & Latte</button>
+              <button type="button" class="chat-opt-btn" onclick="selectInteractiveConcept('Gourmet Hot Chocolate Bar')">🍫 Hot Chocolate</button>
+            </div>
+          </div>`
+        );
+      }, 400);
+    };
+
+    window.selectInteractiveConcept = function(conceptName) {
+      interactiveQuoteState.concept = conceptName;
+      appendMessage(`Selected: <strong>${conceptName}</strong>`, 'user');
+
+      showTypingIndicator();
+      setTimeout(() => {
+        removeTypingIndicator();
+        appendMessage(
+          `Great choice! The <em>${conceptName}</em> setup is one of our most popular activations.<br><br>
+How many guests are you expecting?`,
+          'bot',
+          `<div class="chat-interactive-box">
+            <div class="chat-interactive-title">Step 2: Guest Count & Duration</div>
+            <div class="chat-options-grid">
+              <button type="button" class="chat-opt-btn" onclick="selectInteractiveGuests('Up to 50 guests', '$750', '2 hours')">👥 Up to 50 ($750)</button>
+              <button type="button" class="chat-opt-btn" onclick="selectInteractiveGuests('50 - 100 guests', '$950', '3 hours')">👥 100 guests ($950)</button>
+              <button type="button" class="chat-opt-btn" onclick="selectInteractiveGuests('100 - 150 guests', '$1,200', '3 hours')">👥 150 guests ($1,200)</button>
+              <button type="button" class="chat-opt-btn" onclick="selectInteractiveGuests('200+ guests', 'Custom Corporate', 'Custom')">🏢 200+ (Corporate)</button>
+            </div>
+          </div>`
+        );
+      }, 450);
+    };
+
+    window.selectInteractiveGuests = function(guestsText, priceText, duration) {
+      interactiveQuoteState.guests = guestsText;
+      interactiveQuoteState.price = priceText;
+      interactiveQuoteState.duration = duration;
+
+      appendMessage(`Guests: <strong>${guestsText}</strong> (${priceText})`, 'user');
+
+      showTypingIndicator();
+      setTimeout(() => {
+        removeTypingIndicator();
+        appendMessage(
+          `Got it: <strong>${guestsText}</strong>.<br><br>
+Where in Miami or South Florida will your event take place?`,
+          'bot',
+          `<div class="chat-interactive-box">
+            <div class="chat-interactive-title">Step 3: Event Location</div>
+            <div class="chat-options-grid">
+              <button type="button" class="chat-opt-btn" onclick="finalizeInteractiveQuote('Brickell / Downtown Miami')">🌴 Brickell / Downtown</button>
+              <button type="button" class="chat-opt-btn" onclick="finalizeInteractiveQuote('Wynwood / Miami Beach')">🏖️ Wynwood / Beach</button>
+              <button type="button" class="chat-opt-btn" onclick="finalizeInteractiveQuote('Coral Gables / Doral')">🏙️ Gables / Doral</button>
+              <button type="button" class="chat-opt-btn" onclick="finalizeInteractiveQuote('Fort Lauderdale / Broward')">🌊 Ft Lauderdale</button>
+            </div>
+          </div>`
+        );
+      }, 450);
+    };
+
+    window.finalizeInteractiveQuote = function(location) {
+      interactiveQuoteState.location = location;
+      appendMessage(`Location: <strong>${location}</strong>`, 'user');
+
+      showTypingIndicator();
+      setTimeout(() => {
+        removeTypingIndicator();
+
+        const quoteCardHtml = `
+          <div class="chat-calc-card">
+            <div class="calc-row">
+              <span style="color:#94a3b8; font-weight:700;">EXPERIENCE:</span>
+              <strong style="color:#fff;">${interactiveQuoteState.concept}</strong>
+            </div>
+            <div class="calc-row">
+              <span style="color:#94a3b8; font-weight:700;">GUESTS:</span>
+              <span>${interactiveQuoteState.guests} (${interactiveQuoteState.duration})</span>
+            </div>
+            <div class="calc-row">
+              <span style="color:#94a3b8; font-weight:700;">LOCATION:</span>
+              <span>${interactiveQuoteState.location}</span>
+            </div>
+            <div class="calc-row" style="margin-top:0.5rem; padding-top:0.5rem; border-top:1px dashed #475569;">
+              <span style="font-weight:800; font-size:0.95rem;">ESTIMATED TOTAL:</span>
+              <span class="calc-price">${interactiveQuoteState.price}</span>
+            </div>
+            <div style="font-size:0.75rem; color:#94a3b8; margin-top:0.4rem; line-height:1.4;">
+              ✓ 100% Colombian Arabica single-origin beans (Luisa Coffee)<br>
+              ✓ Certified barista + unlimited cups and premium ingredients<br>
+              ✓ Turnkey compact cart setup (requires standard 120V outlet)
+            </div>
+          </div>
+          <div style="margin-top:0.6rem; font-size:0.83rem;">
+            📩 <strong>To reserve your date and receive your formal PDF proposal:</strong><br>
+            Enter your <em>email address</em> below.
+          </div>
+        `;
+
+        appendMessage(
+          `✨ <strong>Custom Estimate Ready!</strong><br>Here is your quote breakdown based on our Luisa Coffee event pricing:`,
+          'bot',
+          quoteCardHtml
+        );
+      }, 600);
+    };
+
+    // --- Knowledge Base Handler with Nexus Context (English) ---
+    function getKnowledgeBaseResponse(query) {
+      const q = query.toLowerCase();
+
+      // Email match
+      const emailMatch = query.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/);
+      if (emailMatch) {
+        return {
+          type: 'email',
+          email: emailMatch[0],
+          text: `Perfect! We have registered your email <strong>${emailMatch[0]}</strong> with priority status.<br><br>
+Our <strong>Luisa Coffee & Miami Cold Brew Cart</strong> event team will send your complete menu package, date availability, and formal estimate to your inbox shortly.`
+        };
+      }
+
+      // Origin story & Luisa Coffee
+      if (q.includes('luisa') || q.includes('origin') || q.includes('bean') || q.includes('colombia') || q.includes('coffee') || q.includes('roast') || q.includes('grano')) {
+        return {
+          type: 'info',
+          text: `🌱 <strong>The Luisa Coffee Origin Story:</strong><br><br>
+${NEXUS_PROJECT_MEMORY.parentCompany.originStory}<br><br>
+Every cart from <em>Miami Cold Brew Cart</em> and <em>Miami Coffee Cart</em> pours this exact specialty roast, delivering an elevated beverage standard your guests will remember from the first sip.`
+        };
+      }
+
+      // Enterprise clients
+      if (q.includes('client') || q.includes('company') || q.includes('trust') || q.includes('corporate') || q.includes('brand') || q.includes('empresa')) {
+        const clientList = NEXUS_PROJECT_MEMORY.trustedClients.join(', ');
+        return {
+          type: 'info',
+          text: `🏆 <strong>Clients Who Trust Our Carts:</strong><br><br>
+We have delivered high-volume catering and custom activations for premier brands and institutions:<br>
+• <strong>${clientList}</strong>.<br><br>
+Our carts regularly serve inside the <em>Miami Beach Convention Center</em>, <em>Mana Wynwood</em>, and top Brickell financial towers.`
+        };
+      }
+
+      // Technical specs
+      if (q.includes('spec') || q.includes('power') || q.includes('requirement') || q.includes('outlet') || q.includes('size') || q.includes('dimension') || q.includes('elevator')) {
+        return {
+          type: 'info',
+          text: `🔌 <strong>Cart Technical Specifications:</strong><br><br>
+• <strong>Electrical:</strong> ${NEXUS_PROJECT_MEMORY.specs.power}.<br>
+• <strong>Space Footprint:</strong> ${NEXUS_PROJECT_MEMORY.specs.space}.<br>
+• <strong>Accessibility:</strong> ${NEXUS_PROJECT_MEMORY.specs.mobility}.<br>
+• <strong>Advance Notice:</strong> ${NEXUS_PROJECT_MEMORY.specs.advanceTime}.<br><br>
+Clean, whisper-quiet, self-contained setups with zero event disruption.`
+        };
+      }
+
+      // Contact & Phone
+      if (q.includes('phone') || q.includes('whatsapp') || q.includes('contact') || q.includes('call') || q.includes('email') || q.includes('telefono')) {
+        return {
+          type: 'info',
+          text: `📞 <strong>Direct Contact Channels:</strong><br><br>
+• <strong>Cart Direct Phone / WhatsApp:</strong> <a href="tel:${NEXUS_PROJECT_MEMORY.parentCompany.phone}" style="color:var(--primary); font-weight:800;">${NEXUS_PROJECT_MEMORY.parentCompany.phone}</a><br>
+• <strong>Roastery Headquarters (Luisa Coffee):</strong> ${NEXUS_PROJECT_MEMORY.parentCompany.officePhone}<br>
+• <strong>Direct Email:</strong> <a href="mailto:${NEXUS_PROJECT_MEMORY.parentCompany.email}">${NEXUS_PROJECT_MEMORY.parentCompany.email}</a><br>
+• <strong>Central Miami Hub:</strong> ${NEXUS_PROJECT_MEMORY.parentCompany.address}<br><br>
+Or type your email or phone number here and we'll connect with you right away!`
+        };
+      }
+
+      // Packages
+      if (q.includes('package') || q.includes('menu') || q.includes('offer') || q.includes('option') || q.includes('paquete')) {
+        return {
+          type: 'info',
+          text: `☕ <strong>Our 5 Mobile Beverage Experiences:</strong><br><br>
+1️⃣ <strong>Signature Nitro Cold Brew Bar:</strong> Nitrogen-infused cold brew on tap with velvety cascading foam and artisan syrups.<br>
+2️⃣ <strong>Ceremonial Matcha Bar:</strong> Uji ceremonial-grade matcha whisked fresh to order and organic fruit refreshers.<br>
+3️⃣ <strong>Specialty Espresso Bar:</strong> Italian commercial espresso machine, cortados, flat whites, and live latte art.<br>
+4️⃣ <strong>Gourmet Hot Chocolate Bar:</strong> Rich Belgian chocolate with torched artisan marshmallows and gold leaf flake.<br>
+5️⃣ <strong>Craft Fruit Refresher Bar:</strong> Cold-pressed juices, sparkling botanical infusions, and mocktails.<br><br>
+Click <strong>'⚡ Quote in 3 Clicks'</strong> above to calculate your event price in seconds!`
+        };
+      }
+
+      // Pricing & Estimates
+      if (q.includes('price') || q.includes('cost') || q.includes('quote') || q.includes('estimate') || q.includes('budget') || q.includes('precio')) {
+        return {
+          type: 'info',
+          text: `Our packages are <strong>all-inclusive</strong> (designer mobile cart, lead baristas, self-contained setup, cups, syrups, and unlimited drinks):<br><br>
+• <strong>Intimate Events (Up to 50 guests):</strong> Starting at $750 (2 hours of unlimited service).<br>
+• <strong>Mid-Size Events (50 - 100 guests):</strong> $950 (3 hours).<br>
+• <strong>Large Gatherings (100 - 150 guests):</strong> $1,200 (3 hours with 2 baristas).<br>
+• <strong>Corporate Summits (200+ guests):</strong> High-throughput custom corporate packages.<br><br>
+Click <strong>'⚡ Quote in 3 Clicks'</strong> or enter your email to get a tailored estimate!`
+        };
+      }
+
+      // Branding & Customization
+      if (q.includes('brand') || q.includes('logo') || q.includes('custom') || q.includes('cup') || q.includes('wrap')) {
+        return {
+          type: 'info',
+          text: `🎨 <strong>Brand Activations & Customization:</strong><br><br>
+We specialize in corporate brand activations! We can customize:<br>
+• <strong>Custom Branded Cups & Sleeves:</strong> High-definition logo print on eco-friendly takeaway cups.<br>
+• <strong>Cart Medallion & Front Wrap:</strong> Custom decals and panels matching your company colors and branding.<br>
+• <strong>Personalized Menu Signage:</strong> Custom-named drinks tailored to your company or campaign theme.<br><br>
+Drop your email to receive photos and examples of past brand activations!`
+        };
+      }
+
+      // Default fallback
+      return {
+        type: 'general',
+        text: `We would love to help! We cater weddings, corporate conferences, product launches, and private galas across Miami and Broward with the specialty beans of <strong>Luisa Coffee</strong>.<br><br>
+Click <strong>'⚡ Quote in 3 Clicks'</strong> for an instant estimate or drop your email address below.`
+      };
+    }
+
+    async function handleUserMessage(userText) {
+      appendMessage(userText, 'user');
+      conversationHistory.push({ sender: 'user', text: userText });
+
+      showTypingIndicator();
+
+      const kbResponse = getKnowledgeBaseResponse(userText);
+
+      setTimeout(async () => {
+        removeTypingIndicator();
+
+        let extraCard = '';
+        if (kbResponse.type === 'email') {
+          leadCapturedEmail = kbResponse.email;
+          extraCard = `<div class="lead-captured-card">✅ <span>Lead registered in Firebase Firestore with attached event quote</span></div>`;
+
+          // Sync lead + quote with Firebase Firestore
+          try {
+            await db.collection('leads').add({
+              email: leadCapturedEmail,
+              name: "Website Interactive Chat Lead",
+              fullConversation: conversationHistory,
+              interactiveQuote: interactiveQuoteState,
+              source: "website_chatbot_nexus_memory",
+              status: "qualified_lead",
+              createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            });
+            console.log("Interactive Lead synchronized to Firestore:", leadCapturedEmail, interactiveQuoteState);
+          } catch (err) {
+            console.warn("Firestore notice:", err.message);
+          }
+        }
+
+        appendMessage(kbResponse.text, 'bot', extraCard);
+        conversationHistory.push({ sender: 'bot', text: kbResponse.text });
+      }, 600);
+    }
+  </script>
+</body>
+</html>
