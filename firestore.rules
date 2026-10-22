@@ -1,28 +1,80 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    
-    // Website contact form submissions
+
+    // Helper: Verify user owns document by URL path segment or existing document owner field
+    function isOwner(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+
+    // Helper: Prevent setting sensitive elevation fields (roles, balances, admin flags)
+    function hasNoPrivilegedFields() {
+      return !request.resource.data.keys().hasAny([
+        'role', 'roles', 'admin', 'isAdmin', 'plan', 'creditBalance', 'credits', 'isSuperuser'
+      ]);
+    }
+
+    // Helper: Validate public contact form submission
+    function isValidContactSubmission() {
+      let data = request.resource.data;
+      let allowedKeys = [
+        'name', 'fullName', 'businessName', 'company', 'email', 'phone',
+        'eventLocation', 'eventDate', 'duration', 'guestCount', 'helpWith',
+        'concept', 'industry', 'budget', 'timeline', 'bottleneck', 'notes',
+        'message', 'source', 'createdAt'
+      ];
+      return data.keys().hasOnly(allowedKeys)
+        && hasNoPrivilegedFields()
+        && data.email is string && data.email.size() >= 5 && data.email.size() <= 120
+        && (!('name' in data) || (data.name is string && data.name.size() <= 120))
+        && (!('businessName' in data) || (data.businessName is string && data.businessName.size() <= 150))
+        && (!('bottleneck' in data) || (data.bottleneck is string && data.bottleneck.size() <= 1500))
+        && (!('notes' in data) || (data.notes is string && data.notes.size() <= 1500));
+    }
+
+    // Helper: Validate interactive chatbot lead submission
+    function isValidLeadSubmission() {
+      let data = request.resource.data;
+      let allowedKeys = [
+        'email', 'name', 'fullConversation', 'interactiveQuote',
+        'source', 'status', 'createdAt'
+      ];
+      return data.keys().hasOnly(allowedKeys)
+        && hasNoPrivilegedFields()
+        && data.email is string && data.email.size() >= 5 && data.email.size() <= 120;
+    }
+
+    // --- 1. User Documents: Strict Isolation & Ownership ---
+    match /users/{userId} {
+      allow read, write: if isOwner(userId) && hasNoPrivilegedFields();
+
+      // Sub-collections inherit owner-only restriction
+      match /{allSubcollections=**} {
+        allow read, write: if isOwner(userId) && hasNoPrivilegedFields();
+      }
+    }
+
+    // --- 2. Public Contact Form: Create-Only with Strict Field Validation ---
     match /contacts/{contactId} {
-      allow create: if request.resource.data.email is string;
-      allow read, update, delete: if request.auth != null;
+      allow create: if isValidContactSubmission();
+      allow read, update, delete: if false;
     }
 
-    // Interactive chatbot leads
+    // --- 3. Interactive Chatbot Leads: Create-Only ---
     match /leads/{leadId} {
-      allow create: if request.resource.data.email is string;
-      allow read, update, delete: if request.auth != null;
+      allow create: if isValidLeadSubmission();
+      allow read, update, delete: if false;
     }
 
-    // Chatbot conversations
+    // --- 4. Interactive Chatbot Messages: Create-Only ---
     match /messages/{messageId} {
-      allow create: if true;
-      allow read, update, delete: if request.auth != null;
+      allow create: if hasNoPrivilegedFields();
+      allow read, update, delete: if false;
     }
 
-    // Default deny all other operations
+    // --- 5. Default Deny Everything Else ---
     match /{document=**} {
-      allow read, write: if request.auth != null;
+      allow read, write: if false;
     }
   }
 }
