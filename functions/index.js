@@ -25,7 +25,7 @@ function getGmailPassword() {
 
 const GMAIL_USER = process.env.GMAIL_USER || "mcardenas.cl@gmail.com";
 const GMAIL_PASS = getGmailPassword();
-const BRAND_FROM_NAME = "Miami Cold Brew Cart • Luisa Coffee";
+const BRAND_FROM_NAME = "Jessica • Miami Cold Brew Cart";
 const BRAND_REPLY_EMAIL = "cart@luisacoffee.com";
 
 // Scope Agent Logic (under CSO)
@@ -148,10 +148,10 @@ Next Step:
 Let's lock in your date on our calendar before the weekend books up. Click the booking link below or reply directly to this email to reserve your cart setup.
 
 Warm regards,
-Marcelo Cardenas
-Founder & Event Director
+Jessica
+Coffee Specialist & Event Producer
 Miami Cold Brew Cart • An Experiential Branch of Luisa Coffee & Miami Coffee Cart
-${GMAIL_USER}`;
+cart@luisacoffee.com`;
 }
 
 // Email Writer Logic (under CMO) - Branded Luxury Coffee HTML
@@ -208,11 +208,11 @@ function buildBrandedHtmlEmail(firstName, businessName, bottleneck, proposalPitc
                 </tr>
               </table>
               <div style="border-top: 1px solid #e7dfd5; padding-top: 22px; margin-top: 28px; text-align: left;">
-                <p style="margin: 0; font-size: 15px; font-weight: 800; color: #1e1b18;">Marcelo Cardenas</p>
-                <p style="margin: 2px 0 0; font-size: 13px; color: #78350f; font-weight: 600;">Founder & Hospitality Lead &bull; Miami Cold Brew Cart</p>
+                <p style="margin: 0; font-size: 15px; font-weight: 800; color: #1e1b18;">Jessica</p>
+                <p style="margin: 2px 0 0; font-size: 13px; color: #78350f; font-weight: 600;">Coffee Specialist & Event Producer &bull; Miami Cold Brew Cart</p>
                 <p style="margin: 4px 0 0; font-size: 13px; color: #64748b;">
-                  Direct: <a href="mailto:${GMAIL_USER}" style="color: #ea580c; text-decoration: none; font-weight: 600;">${GMAIL_USER}</a> &bull; 
-                  <a href="https://miamicoffeecart.com" target="_blank" style="color: #78350f; text-decoration: none;">Miami Coffee Cart</a> &bull; 
+                  Email: <a href="mailto:cart@luisacoffee.com" style="color: #ea580c; text-decoration: none; font-weight: 600;">cart@luisacoffee.com</a> &bull; 
+                  Phone: <a href="tel:+17865302517" style="color: #78350f; text-decoration: none;">+1 (786) 530-2517</a> &bull; 
                   <a href="https://luisacoffee.com" target="_blank" style="color: #78350f; text-decoration: none;">Luisa Coffee</a>
                 </p>
                 <p style="margin: 12px 0 0; font-size: 11px; color: #a8a29e; font-style: italic;">Specialty Cold Brew, Espresso, Matcha & Warm Refreshers serving Miami, Brickell, Coral Gables, Wynwood and Fort Lauderdale.</p>
