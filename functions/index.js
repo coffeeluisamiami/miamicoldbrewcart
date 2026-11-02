@@ -25,6 +25,8 @@ function getGmailPassword() {
 
 const GMAIL_USER = process.env.GMAIL_USER || "mcardenas.cl@gmail.com";
 const GMAIL_PASS = getGmailPassword();
+const BRAND_FROM_NAME = "Miami Cold Brew Cart • Luisa Coffee";
+const BRAND_REPLY_EMAIL = "cart@luisacoffee.com";
 
 // Scope Agent Logic (under CSO)
 // Scope Agent Logic (under CSO) - Miami Cold Brew Cart
@@ -322,9 +324,10 @@ exports.draftContactReply = functions.firestore
           }
         });
         await transporter.sendMail({
-          from: `"Marcelo Cardenas" <${GMAIL_USER}>`,
+          from: `"${BRAND_FROM_NAME}" <${GMAIL_USER}>`,
+          replyTo: `"${BRAND_FROM_NAME}" <${BRAND_REPLY_EMAIL}>`,
           to: data.email,
-          subject: `Your proposal from Marcelo Cardenas -- ${businessName}`,
+          subject: `Your Miami Cold Brew Cart Proposal -- ${businessName}`,
           text: pitch,
           html: htmlEmail
         });
@@ -412,7 +415,8 @@ exports.draftLeadReply = functions.firestore
           }
         });
         await transporter.sendMail({
-          from: `"Marcelo Cardenas" <${GMAIL_USER}>`,
+          from: `"${BRAND_FROM_NAME}" <${GMAIL_USER}>`,
+          replyTo: `"${BRAND_FROM_NAME}" <${BRAND_REPLY_EMAIL}>`,
           to: data.email,
           subject: `Your Miami Cold Brew Cart Event Quote & Proposal -- ${concept}`,
           text: pitch,
