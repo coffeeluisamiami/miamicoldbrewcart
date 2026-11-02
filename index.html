@@ -949,6 +949,53 @@
       margin-top: 0.25rem;
     }
 
+    .chat-actions-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.75rem;
+      padding-top: 0.65rem;
+      border-top: 1px dashed #cbd5e1;
+    }
+
+    .chat-action-pill {
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      color: #1e293b;
+      padding: 0.42rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      text-decoration: none;
+    }
+
+    .chat-action-pill:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+    }
+
+    .chat-action-pill.highlight {
+      background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%);
+      border-color: transparent;
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(234, 88, 12, 0.3);
+    }
+
+    .chat-action-pill.highlight:hover {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.4);
+    }
+
     .chat-calc-card {
       background: linear-gradient(135deg, #0f172a, #1e293b);
       color: #fff;
@@ -1367,14 +1414,13 @@
         Hello! 👋 <strong>I am an automated AI assistant and event concierge</strong> for <strong>Miami Cold Brew Cart</strong> and the <em>Luisa Coffee</em> ecosystem.<br><br>
         Planning a corporate summit, wedding, or brand activation in South Florida? You can <strong>simulate an instant quote</strong> or explore our boutique mobile setups:
         
-        <div class="chat-interactive-box">
-          <div class="chat-interactive-title">⚡ Quick Options</div>
-          <div class="chat-options-grid">
-            <button type="button" class="chat-opt-btn" onclick="startInteractiveQuote()">📊 Instant Quote Calculator</button>
-            <button type="button" class="chat-opt-btn" onclick="handleUserMessage('Tell me about your coffee origin and Luisa Coffee')">🌱 Luisa Coffee Origin</button>
-            <button type="button" class="chat-opt-btn" onclick="handleUserMessage('Which companies and corporate clients trust you?')">🏆 Trusted Clients</button>
-            <button type="button" class="chat-opt-btn" onclick="handleUserMessage('What are the cart technical specs and power requirements?')">🔌 Cart Specs & Power</button>
-          </div>
+        <div class="chat-actions-container" style="margin-top:0.9rem;">
+          <button type="button" class="chat-action-pill highlight" onclick="startInteractiveQuote()">⚡ Instant Quote (3 Clicks)</button>
+          <button type="button" class="chat-action-pill" onclick="handleUserMessage('What drinks and menu options do you offer?')">☕ Drink Menus</button>
+          <button type="button" class="chat-action-pill" onclick="handleUserMessage('What are your packages and pricing tiers?')">💵 Pricing & Packages</button>
+          <button type="button" class="chat-action-pill" onclick="handleUserMessage('Can I combine cold brew with matcha or espresso?')">✨ Multi-Bar Combos</button>
+          <button type="button" class="chat-action-pill" onclick="handleUserMessage('What are the electrical power and space requirements?')">🔌 Setup & Specs</button>
+          <button type="button" class="chat-action-pill" onclick="handleUserMessage('How do I reach Jessica directly?')">📞 Contact Jessica</button>
         </div>
       </div>
     </div>
@@ -1724,7 +1770,7 @@ Where in Miami or South Florida will your event take place?`,
       }, 600);
     };
 
-    // --- Advanced AI Conversational Concierge & Knowledge Engine ---
+    // --- Advanced AI Conversational Concierge & Knowledge Engine with Interactive Action Chips ---
     function getKnowledgeBaseResponse(query) {
       const q = query.toLowerCase().trim();
 
@@ -1735,38 +1781,71 @@ Where in Miami or South Florida will your event take place?`,
           type: 'email',
           email: emailMatch[0],
           text: `🎉 <strong>Thank you!</strong> I have registered your email <strong>${emailMatch[0]}</strong> with our priority event queue.<br><br>
-Our lead event producer, <strong>Jessica</strong>, along with the <strong>Miami Cold Brew Cart & Luisa Coffee</strong> team, will review your event details and send a formal proposal directly to your inbox within minutes!`
+Our lead event producer, <strong>Jessica</strong>, along with the <strong>Miami Cold Brew Cart & Luisa Coffee</strong> team, will review your event details and send a formal proposal directly to your inbox within minutes!`,
+          buttons: [
+            { label: "⚡ Calculate Another Quote", action: "quote" },
+            { label: "📞 Call Jessica Directly", link: "tel:+17865302517" },
+            { label: "✨ Explore Multi-Bar Combos", query: "Can I combine cold brew with matcha or espresso?" }
+          ]
         };
       }
 
-      // 2. Greetings and pleasantries
+      // 2. Greetings and pleasantries (Hola, Hello, Buenos días, etc.)
       if (/^(hi|hello|hey|hola|buenos|buenas|saludos|howdy|good morning|good afternoon)/i.test(q) && q.length < 35) {
         return {
           type: 'greeting',
-          text: `Hello there! 👋 I am the <strong>Miami Cold Brew Cart</strong> AI concierge.<br><br>
-Whether you're organizing an intimate wedding, a 500+ attendee corporate summit, or an office coffee program in South Florida, I can help you with:<br>
-• <strong>Instant Pricing:</strong> Click <em>'⚡ Quote in 3 Clicks'</em><br>
-• <strong>Our Menus:</strong> Ask about Cold Brew, Nitro, Matcha, Espresso, or Hot Chocolate<br>
-• <strong>Multi-Bar Combinations:</strong> Combine cold brew + espresso + matcha<br>
-• <strong>Technical Requirements:</strong> Power, dimensions, and setup logistics<br><br>
-How can I assist your event plans today?`
+          text: `Hello there! 👋 ¡Hola! Welcome to <strong>Miami Cold Brew Cart</strong> & the <em>Luisa Coffee</em> ecosystem.<br><br>
+I am your digital event concierge. How can I assist with your upcoming South Florida event? Choose a quick option below or ask me anything!`,
+          buttons: [
+            { label: "⚡ Instant Quote (3 Clicks)", action: "quote", highlight: true },
+            { label: "☕ Drink Menus & Concepts", query: "What drinks and menu options do you offer?" },
+            { label: "💵 Pricing & Packages", query: "What are your packages and pricing tiers?" },
+            { label: "✨ Multi-Bar Combos", query: "Can I combine cold brew with matcha or espresso?" },
+            { label: "🎨 Custom Cup Branding", query: "Tell me about custom branded cups and wraps" },
+            { label: "📞 Contact Jessica", query: "How do I reach Jessica directly?" }
+          ]
         };
       }
 
-      // 3. Location, coverage area & travel
+      // 3. Menus, Drinks & Signature Beverages
+      if (q.includes('menu') || q.includes('drink') || q.includes('bebida') || q.includes('latte') || q.includes('nitro') || q.includes('carta')) {
+        return {
+          type: 'info',
+          text: `☕ <strong>Signature Mobile Beverage Menu:</strong><br><br>
+• <strong>Nitro Cold Brew on Tap:</strong> Nitrogen-infused, velvety cascading pour with natural chocolate/caramel sweetness.<br>
+• <strong>Vanilla Sweet Cream Nitro:</strong> Hand-whipped sweet cream float over single-origin cold brew.<br>
+• <strong>Artisanal Syrups & Lattes:</strong> Tahitian Vanilla, Lavender Honey, Salted Caramel.<br>
+• <strong>Espresso & Cortados (Dual Cart):</strong> Full Italian espresso bar with live steamed micro-foam latte art.<br>
+• <strong>Ceremonial Uji Matcha:</strong> Whisked to order with organic oat milk or strawberry puree.<br><br>
+All cups, napkins, crystal ice, and plant-based milks are 100% included in all packages!`,
+          buttons: [
+            { label: "⚡ Instant Quote in 3 Clicks", action: "quote", highlight: true },
+            { label: "🥛 Milks & Syrups (Oatly)", query: "What milks and syrups are included?" },
+            { label: "💵 View Pricing Tiers", query: "What are your packages and pricing tiers?" },
+            { label: "✨ Combine With Matcha Bar", query: "Can I combine cold brew with matcha or espresso?" }
+          ]
+        };
+      }
+
+      // 4. Location, coverage area & travel
       if (q.includes('where') || q.includes('location') || q.includes('area') || q.includes('city') || q.includes('travel') || q.includes('donde') || q.includes('lugar') || q.includes('cobertura') || q.includes('brickell') || q.includes('wynwood') || q.includes('beach') || q.includes('broward') || q.includes('palm beach')) {
         return {
           type: 'info',
-          text: `📍 <strong>Service Territory & Venues Across South Florida:</strong><br><br>
+          text: `📍 <strong>Service Territory Across South Florida:</strong><br><br>
 We serve the entire tri-county area with zero travel friction:<br>
 • <strong>Miami-Dade:</strong> Brickell, Downtown Miami, Wynwood, Miami Beach, Coral Gables, Coconut Grove, Doral, and Aventura.<br>
 • <strong>Broward County:</strong> Fort Lauderdale, Hollywood, Weston, and Las Olas.<br>
 • <strong>Palm Beach County:</strong> Boca Raton, Delray Beach, and West Palm Beach.<br><br>
-We regularly cater inside the <em>Miami Beach Convention Center</em>, <em>Mana Wynwood</em>, private beachfront villas, and top Brickell financial towers.`
+We cater inside convention centers, beachfront villas, private yachts, and high-rise corporate towers.`,
+          buttons: [
+            { label: "⚡ Calculate Quote", action: "quote", highlight: true },
+            { label: "🔌 Technical & Power Specs", query: "What electrical power and space do you need?" },
+            { label: "📞 Speak with Jessica", query: "How do I reach Jessica directly?" }
+          ]
         };
       }
 
-      // 4. How it works / Booking Process & Advance Notice
+      // 5. How it works / Booking Process & Advance Notice
       if (q.includes('how does it work') || q.includes('how it works') || q.includes('process') || q.includes('advance') || q.includes('book') || q.includes('reserve') || q.includes('como funciona') || q.includes('reserva') || q.includes('anticipacion')) {
         return {
           type: 'info',
@@ -1774,21 +1853,31 @@ We regularly cater inside the <em>Miami Beach Convention Center</em>, <em>Mana W
 1️⃣ <strong>Select Your Cart Experience:</strong> Pick Nitro Cold Brew, Espresso Bar, Matcha, or combine them into a multi-station lounge.<br>
 2️⃣ <strong>Receive Your Custom Proposal:</strong> Enter your guest count and date in our booking form or in this chat to lock in an instant quote.<br>
 3️⃣ <strong>Seamless Event Day:</strong> Our certified baristas arrive 60 minutes before your scheduled start for a whisper-quiet, turnkey setup. All cups, napkins, ice, syrups, and milks are 100% included.<br><br>
-⏱️ <em>Advance booking:</em> We recommend reserving <strong>2 to 4 weeks in advance</strong>, especially during South Florida's busy fall and winter event seasons.`
+⏱️ <em>Advance booking:</em> We recommend reserving <strong>2 to 4 weeks in advance</strong>, especially during South Florida's busy fall and winter event seasons.`,
+          buttons: [
+            { label: "⚡ Start Instant Quote", action: "quote", highlight: true },
+            { label: "💵 View Pricing Tiers", query: "What are your packages and pricing tiers?" },
+            { label: "☕ Beverage Menu Options", query: "What drinks and menu options do you offer?" }
+          ]
         };
       }
 
-      // 5. Origin story, Coffee bean quality, and Colombia
+      // 6. Origin story, Coffee bean quality, and Colombia
       if (q.includes('luisa') || q.includes('origin') || q.includes('bean') || q.includes('colombia') || q.includes('roast') || q.includes('grano') || q.includes('cafe') || q.includes('quality') || q.includes('specialty')) {
         return {
           type: 'info',
           text: `🌱 <strong>The Luisa Coffee Origin Standard:</strong><br><br>
 ${NEXUS_PROJECT_MEMORY.parentCompany.originStory}<br><br>
-Unlike catering companies that use off-the-shelf commercial beans, every single drink poured at <em>Miami Cold Brew Cart</em> and <em>Miami Coffee Cart</em> comes from our own Colombian harvest, master-roasted at origin for silky, low-acidity chocolate and caramel tasting notes.`
+Unlike catering companies that use off-the-shelf commercial beans, every single drink poured at <em>Miami Cold Brew Cart</em> and <em>Miami Coffee Cart</em> comes from our own Colombian harvest, master-roasted at origin for silky, low-acidity chocolate and caramel tasting notes.`,
+          buttons: [
+            { label: "☕ Explore Our Drink Menu", query: "What drinks and menu options do you offer?" },
+            { label: "⚡ Calculate Event Quote", action: "quote", highlight: true },
+            { label: "🏆 Clients Who Trust Us", query: "Which corporate clients trust you?" }
+          ]
         };
       }
 
-      // 6. Milk options, dietary restrictions, and syrups
+      // 7. Milk options, dietary restrictions, and syrups
       if (q.includes('milk') || q.includes('oat') || q.includes('almond') || q.includes('vegan') || q.includes('dairy') || q.includes('leche') || q.includes('syrup') || q.includes('flavor') || q.includes('sugar') || q.includes('gluten')) {
         return {
           type: 'info',
@@ -1797,11 +1886,16 @@ Every cart setup includes an all-inclusive beverage pantry:<br>
 • <strong>Plant-Based Leches:</strong> Barista-grade Oat Milk (Oatly/Califia) and Organic Almond Milk.<br>
 • <strong>Traditional Dairy:</strong> Farm-fresh whole milk.<br>
 • <strong>House-Crafted Syrups:</strong> Tahitian Vanilla, Salted Caramel, Lavender Honey, Hazelnut, and Seasonal Spiced Infusions.<br>
-• <strong>Dietary Friendly:</strong> 100% Gluten-free, zero artificial preservatives, and dairy-free options always clearly marked for your guests.`
+• <strong>Dietary Friendly:</strong> 100% Gluten-free, zero artificial preservatives, and dairy-free options always clearly marked for your guests.`,
+          buttons: [
+            { label: "⚡ Quote With Oatly Included", action: "quote", highlight: true },
+            { label: "☕ Signature Drink Menu", query: "What drinks and menu options do you offer?" },
+            { label: "✨ Multi-Bar Combos", query: "Can I combine cold brew with matcha or espresso?" }
+          ]
         };
       }
 
-      // 7. Multi-Bar Combinations & Sister Brands
+      // 8. Multi-Bar Combinations & Sister Brands
       if (q.includes('combine') || q.includes('combo') || q.includes('both') || q.includes('multi') || q.includes('sister') || q.includes('brand') || q.includes('group') || q.includes('matcha cart') || q.includes('hot chocolate') || q.includes('refresher') || q.includes('combinar')) {
         return {
           type: 'info',
@@ -1810,12 +1904,18 @@ We operate the complete <strong>Luisa Coffee Mobile Ecosystem</strong>, allowing
 • ☕ <strong>Dual Cold Brew + Espresso Bar:</strong> Ice-cold Nitro draft cascades alongside Italian espresso & hot latte art.<br>
 • 🍵 <strong>Coffee & Ceremonial Matcha Lounge:</strong> Specialty Colombian coffee paired with fresh whisked Uji matcha and botanical fruit refreshers.<br>
 • 🍫 <strong>Winter Triple Indulgence:</strong> Nitro Cold Brew + Espresso + Gourmet Belgian Hot Chocolate with torched marshmallows.<br>
-• 🏢 <strong>Corporate Hybrid:</strong> Live pop-up cart catering + ongoing bean-to-cup office machines with <em>Miami Coffee Services</em>.<br><br>
-Click <strong>'⚡ Quote in 3 Clicks'</strong> and choose <em>Multi-Bar Combo</em> for an instant estimate!`
+• 🏢 <strong>Corporate Hybrid:</strong> Live pop-up cart catering + ongoing bean-to-cup office machines with <em>Miami Coffee Services</em>.`,
+          buttons: [
+            { label: "⚡ Calculate Combo Quote", action: "quote", highlight: true },
+            { label: "🍵 Miami Matcha Cart", query: "Tell me about Miami Matcha Cart" },
+            { label: "☕ Miami Coffee Cart (Espresso)", query: "Tell me about Miami Coffee Cart espresso bar" },
+            { label: "🍫 Hot Chocolate Bar", query: "Tell me about Miami Hot Chocolate Cart" },
+            { label: "🏢 Office Coffee Machines", query: "Tell me about Miami Coffee Services" }
+          ]
         };
       }
 
-      // 8. Technical specs, Power, Space & Logistics
+      // 9. Technical specs, Power, Space & Logistics
       if (q.includes('spec') || q.includes('power') || q.includes('requirement') || q.includes('outlet') || q.includes('size') || q.includes('dimension') || q.includes('elevator') || q.includes('electric') || q.includes('volt') || q.includes('espacio') || q.includes('luz') || q.includes('enchufe')) {
         return {
           type: 'info',
@@ -1823,11 +1923,16 @@ Click <strong>'⚡ Quote in 3 Clicks'</strong> and choose <em>Multi-Bar Combo</e
 • <strong>Electrical Power:</strong> One standard dedicated <strong>120V (15-20A)</strong> household outlet. We bring our own heavy-duty surge protection.<br>
 • <strong>Cart Dimensions & Footprint:</strong> Requires a minimum flat area of <strong>5 × 5 feet</strong>.<br>
 • <strong>Elevator & Door Access:</strong> Carts are custom-engineered on heavy-duty caster wheels to fit inside standard passenger elevators and conventional 32"+ interior doors.<br>
-• <strong>Indoor & Outdoor:</strong> Suitable for indoor ballrooms, office towers, or covered outdoor terraces (overhead rain canopy required).`
+• <strong>Indoor & Outdoor:</strong> Suitable for indoor ballrooms, office towers, or covered outdoor terraces (overhead rain canopy required).`,
+          buttons: [
+            { label: "⚡ Start 3-Click Quote", action: "quote", highlight: true },
+            { label: "📍 Coverage Areas in South FL", query: "Where do you travel in South Florida?" },
+            { label: "📞 Ask Jessica About My Venue", query: "How do I reach Jessica directly?" }
+          ]
         };
       }
 
-      // 9. Pricing, Rates, Packages & Quotes
+      // 10. Pricing, Rates, Packages & Quotes
       if (q.includes('price') || q.includes('cost') || q.includes('quote') || q.includes('estimate') || q.includes('budget') || q.includes('how much') || q.includes('cuanto') || q.includes('precio') || q.includes('costo') || q.includes('tarifa')) {
         return {
           type: 'info',
@@ -1837,11 +1942,18 @@ All packages include the designer mobile cart, certified baristas, unlimited dri
 • <strong>50 – 100 Guests:</strong> <strong>$950</strong> (3 hours of unlimited service).<br>
 • <strong>100 – 150 Guests:</strong> <strong>$1,200</strong> (3 hours with 2 dedicated baristas).<br>
 • <strong>200+ Guests / Corporate Summits:</strong> Custom high-throughput packages.<br><br>
-Click <strong>'⚡ Quote in 3 Clicks'</strong> or enter your email to get a personalized formal estimate!`
+Choose your guest count below for an instant estimate:`,
+          buttons: [
+            { label: "👥 50 Guests ($750)", guestsText: "Up to 50 guests", priceText: "$750", duration: "2 hours" },
+            { label: "👥 100 Guests ($950)", guestsText: "50 - 100 guests", priceText: "$950", duration: "3 hours" },
+            { label: "👥 150 Guests ($1,200)", guestsText: "100 - 150 guests", priceText: "$1,200", duration: "3 hours" },
+            { label: "⚡ Full 3-Click Calculator", action: "quote", highlight: true },
+            { label: "🎨 Add Custom Logos", query: "Can you print custom logos on the cups?" }
+          ]
         };
       }
 
-      // 10. Branding & Customization
+      // 11. Branding & Customization
       if (q.includes('brand') || q.includes('logo') || q.includes('custom') || q.includes('cup') || q.includes('wrap') || q.includes('foam') || q.includes('personaliz')) {
         return {
           type: 'info',
@@ -1849,24 +1961,33 @@ Click <strong>'⚡ Quote in 3 Clicks'</strong> or enter your email to get a pers
 We turn your beverage bar into a memorable sponsor statement:<br>
 • <strong>Custom Branded Cups & Sleeves:</strong> High-resolution printed cups featuring your corporate logo.<br>
 • <strong>Cart Front Vinyl Wraps:</strong> Full magnetic or adhesive panel wraps matching your brand identity (as seen in our DevSec and Craftiva activations).<br>
-• <strong>Personalized Drink Menu Boards:</strong> Drinks custom-named after your company milestones, bridal party, or product launch themes.<br><br>
-Type your email below and we'll send photos of past corporate brand wraps!`
+• <strong>Personalized Drink Menu Boards:</strong> Drinks custom-named after your company milestones, bridal party, or product launch themes.`,
+          buttons: [
+            { label: "⚡ Quote With Custom Cart", action: "quote", highlight: true },
+            { label: "🏆 Past Corporate Activations", query: "Which corporate clients trust you?" },
+            { label: "📞 Request Custom Mockup", query: "How do I reach Jessica directly?" }
+          ]
         };
       }
 
-      // 11. Clients who trust us / Credibility
-      if (q.includes('client') || q.includes('company') || q.includes('trust') || q.includes('corporate') || q.includes('portfolio') || q.includes('review') || q.includes('experience') || q.includes('empresa') || q.includes('cliente')) {
+      // 12. Clients who trust us / Credibility
+      if (q.includes('client') || q.includes('company') || q.includes('trust') || q.includes('corporate') || q.includes('portfolio') || q.includes('review') || q.includes('experience') || q.includes('empresa') || q.includes('cliente') || q.includes('mana tech') || q.includes('saks')) {
         const clientList = NEXUS_PROJECT_MEMORY.trustedClients.join(', ');
         return {
           type: 'info',
           text: `🏆 <strong>Trusted by Premier Teams in South Florida:</strong><br><br>
 We have proudly poured for top global corporations, institutions, and summits:<br>
 • <strong>${clientList}</strong>.<br><br>
-Our baristas are certified in five-star hospitality and trained to handle peak crowd surges of 300+ drinks per hour with zero waiting congestion.`
+Our baristas are certified in five-star hospitality and trained to handle peak crowd surges of 300+ drinks per hour with zero waiting congestion.`,
+          buttons: [
+            { label: "⚡ Instant Event Quote", action: "quote", highlight: true },
+            { label: "🎨 Corporate Branding Options", query: "Tell me about custom branded cups and wraps" },
+            { label: "📞 Speak With Jessica", query: "How do I reach Jessica directly?" }
+          ]
         };
       }
 
-      // 12. Direct Contact, Phone, and Email
+      // 13. Direct Contact, Phone, and Email
       if (q.includes('phone') || q.includes('whatsapp') || q.includes('contact') || q.includes('call') || q.includes('hablar') || q.includes('telefono') || q.includes('correo') || q.includes('jessica')) {
         return {
           type: 'info',
@@ -1875,20 +1996,28 @@ Our baristas are certified in five-star hospitality and trained to handle peak c
 • <strong>Direct Phone / WhatsApp:</strong> <a href="tel:+17865302517" style="color:var(--primary); font-weight:800;">+1 (786) 530-2517</a><br>
 • <strong>Roastery Headquarters (Luisa Coffee):</strong> +1 (786) 659-4164<br>
 • <strong>Miami Hub:</strong> Miami, FL 33130<br><br>
-Or simply leave your email right here and Jessica will send your custom quote immediately!`
+Tap below to call, email, or simulate your event proposal:`,
+          buttons: [
+            { label: "📞 Call +1 (786) 530-2517", link: "tel:+17865302517" },
+            { label: "✉️ Email cart@luisacoffee.com", link: "mailto:cart@luisacoffee.com" },
+            { label: "⚡ Instant 3-Click Quote", action: "quote", highlight: true }
+          ]
         };
       }
 
-      // 13. Smart Fallback: dynamic contextual guidance
+      // 14. Interactive Dynamic Fallback for any query / "cualquier cosa"
       return {
         type: 'general',
-        text: `Thanks for asking! I'm here to help coordinate your mobile cart experience with <strong>Miami Cold Brew Cart</strong> and the <em>Luisa Coffee</em> ecosystem.<br><br>
-You can ask me about:<br>
-• 💰 <strong>Pricing & Packages</strong> (Starting at $750 for 50 guests)<br>
-• ☕ <strong>Beverage Concepts</strong> (Nitro Cold Brew, Matcha, Espresso, Hot Chocolate)<br>
-• 🎨 <strong>Custom Branded Cups & Cart Wraps</strong><br>
-• 🔌 <strong>Electrical & Venue Specs</strong> (120V outlet, 5x5 ft space)<br><br>
-Or click <strong>'⚡ Quote in 3 Clicks'</strong> to calculate an instant quote for your guest count!`
+        text: `Thanks for reaching out! I'm here to coordinate every detail for your mobile beverage experience with <strong>Miami Cold Brew Cart</strong> and the <em>Luisa Coffee</em> family.<br><br>
+Tap any topic below to jump directly into the details, or calculate an instant quote for your guest count:`,
+        buttons: [
+          { label: "⚡ Instant Quote in 3 Clicks", action: "quote", highlight: true },
+          { label: "💵 Pricing & Packages", query: "What are your packages and pricing tiers?" },
+          { label: "☕ Drink Menus & Concepts", query: "What drinks and menu options do you offer?" },
+          { label: "🥛 Leches & Syrups (Oatly)", query: "What milks and syrups are included?" },
+          { label: "🔌 Power & Venue Specs", query: "What are the technical and power specs?" },
+          { label: "📞 Talk to Jessica", query: "How do I reach Jessica directly?" }
+        ]
       };
     }
 
@@ -1925,10 +2054,33 @@ Or click <strong>'⚡ Quote in 3 Clicks'</strong> to calculate an instant quote 
           }
         }
 
-        appendMessage(kbResponse.text, 'bot', extraCard);
+        // Render dynamic interactive action pills
+        let buttonsHtml = '';
+        if (kbResponse.buttons && kbResponse.buttons.length > 0) {
+          buttonsHtml = `<div class="chat-actions-container">` +
+            kbResponse.buttons.map(btn => {
+              if (btn.action === 'quote') {
+                return `<button type="button" class="chat-action-pill ${btn.highlight ? 'highlight' : ''}" onclick="startInteractiveQuote()">${btn.label}</button>`;
+              } else if (btn.guestsText) {
+                return `<button type="button" class="chat-action-pill ${btn.highlight ? 'highlight' : ''}" onclick="selectInteractiveGuests('${btn.guestsText}', '${btn.priceText}', '${btn.duration}')">${btn.label}</button>`;
+              } else if (btn.link) {
+                return `<a href="${btn.link}" class="chat-action-pill ${btn.highlight ? 'highlight' : ''}" target="${btn.target || '_self'}">${btn.label}</a>`;
+              } else {
+                const escapedQuery = (btn.query || '').replace(/"/g, '&quot;').replace(/'/g, "\\'");
+                return `<button type="button" class="chat-action-pill ${btn.highlight ? 'highlight' : ''}" onclick="handleUserMessage('${escapedQuery}')">${btn.label}</button>`;
+              }
+            }).join('') +
+          `</div>`;
+        }
+
+        appendMessage(kbResponse.text, 'bot', (extraCard ? extraCard : '') + buttonsHtml);
         conversationHistory.push({ sender: 'bot', text: kbResponse.text });
-      }, 600);
+      }, 550);
     }
+
+    // Expose handleUserMessage globally so interactive pills can trigger it seamlessly
+    window.handleUserMessage = handleUserMessage;
+    window.sendQuickPrompt = handleUserMessage;
   </script>
 </body>
 </html>
