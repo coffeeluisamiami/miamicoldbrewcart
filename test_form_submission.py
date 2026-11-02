@@ -9,7 +9,7 @@ def submit_live_event_inquiry():
 
         print("Filling out event catering fields...")
         page.fill("#name", "Marcelo Cardenas")
-        page.fill("#businessName", "Maxtron Luxury Events")
+        page.fill("#businessName", "Miami Cold Brew Cart Events")
         page.fill("#email", "mcardenas.cl@gmail.com")
         page.fill("#eventLocation", "Brickell City Centre Penthouse, Miami")
         page.fill("#eventDate", "2026-11-20")
@@ -17,7 +17,7 @@ def submit_live_event_inquiry():
         page.select_option("#guestCount", "100-200 guests")
         page.select_option("#helpWith", "Signature Nitro Cold Brew Bar (Nitro & Iced Specialty Lattes)")
         page.select_option("#budget", "$1,000-$2,500")
-        page.fill("#bottleneck", "Fast guest flow with zero lines, custom branded cups with Maxtron logo, oat milk focus")
+        page.fill("#bottleneck", "Fast guest flow with zero lines, custom branded cups with Miami Cold Brew Cart logo, oat milk focus")
 
         print("Submitting live event inquiry...")
         page.click("#submitBtn")
