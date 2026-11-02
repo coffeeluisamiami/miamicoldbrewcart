@@ -24,7 +24,15 @@
   3. **Miami Matcha Cart** (`https://miamimatchacart.com` | `matcha@luisacoffee.com`): Ceremonial-grade Japanese matcha prepared fresh on-site with specialty infusions (Strawberry Matcha, Iced Matcha Lattes).
   4. **Miami Hot Chocolate Cart** (`https://miamihotchocolatecart.com` | `hotchocolate@luisacoffee.com`): Gourmet hot chocolate bar with artisanal toppings (shaved chocolate, gold flake, torched marshmallows).
   5. **Miami Refresher Cart** (`https://miamirefreshercart.com` | `refresher@luisacoffee.com`): Craft fruit refreshers, sparkling iced teas, and botanical hydration mocktails.
-  6. **Sister Brands:** Miami Coffee Services (`miamicoffeeservices.com`), Miami Coffee Lab (`miamicoffeelab.com`).
+  6. **Miami Coffee Services** (`https://miamicoffeeservices.com`): Commercial bean-to-cup espresso machines, weekly roasted bean delivery, and full-service office coffee subscriptions for companies across South Florida.
+  7. **Miami Coffee Lab** (`https://miamicoffeelab.com`): Sensory coffee training, professional barista workshops, private cupping events, and corporate team-building experiences.
+
+- **Multi-Service Combinations:**
+  - Clients can freely combine services into dual or triple cart stations:
+    - *Dual Bar:* Nitro Cold Brew + Italian Espresso Bar.
+    - *Dual Bar:* Specialty Coffee + Ceremonial Matcha & Refreshers.
+    - *Triple Experience:* Cold Brew + Espresso + Matcha / Hot Chocolate Bar.
+    - *Corporate Hybrid:* Live Event Catering + Ongoing Office Coffee Setup with Miami Coffee Services.
 
 ---
 

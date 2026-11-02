@@ -1401,7 +1401,9 @@
       <a href="https://luisacoffee.com" target="_blank">Luisa Coffee</a>
       <a href="https://miamimatchacart.com" target="_blank">Miami Matcha Cart</a>
       <a href="https://miamihotchocolatecart.com" target="_blank">Miami Hot Chocolate Cart</a>
-      <a href="https://miamirefresercart.com" target="_blank">Miami Refresher Cart</a>
+      <a href="https://miamirefreshercart.com" target="_blank">Miami Refresher Cart</a>
+      <a href="https://miamicoffeeservices.com" target="_blank">Miami Coffee Services</a>
+      <a href="https://miamicoffeelab.com" target="_blank">Miami Coffee Lab</a>
       <a href="#book-event">Book Event</a>
     </div>
     <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 0.8rem; max-width: 820px; margin-left: auto; margin-right: auto; line-height: 1.6;">
@@ -1500,7 +1502,15 @@
         { name: "Miami Coffee Cart", specialty: "Full Italian espresso bars, live latte art demonstrations, and 'Luisa Moments' live guestbook photo activations.", url: "https://miamicoffeecart.com" },
         { name: "Miami Matcha Cart", specialty: "Ceremonial Uji matcha whisked fresh to order, strawberry matcha lattes, and organic plant-based milks.", url: "https://miamimatchacart.com" },
         { name: "Miami Hot Chocolate Cart", specialty: "Gourmet Swiss/Belgian melted chocolate with hand-torched marshmallow toppings and edible gold flakes.", url: "https://miamihotchocolatecart.com" },
-        { name: "Miami Refresher Cart", specialty: "Handcrafted fruit refreshers, sparkling iced teas, and botanical herbal infusions.", url: "https://miamirefreshercart.com" }
+        { name: "Miami Refresher Cart", specialty: "Handcrafted fruit refreshers, sparkling iced teas, and botanical herbal infusions.", url: "https://miamirefreshercart.com" },
+        { name: "Miami Coffee Services", specialty: "Full-service office espresso machines, bean subscriptions, and breakroom coffee catering.", url: "https://miamicoffeeservices.com" },
+        { name: "Miami Coffee Lab", specialty: "Coffee education, tasting workshops, barista training, and sensory lab sessions.", url: "https://miamicoffeelab.com" }
+      ],
+      combinationServices: [
+        "Cold Brew + Espresso Dual Cart (Miami Cold Brew Cart + Miami Coffee Cart)",
+        "Coffee & Ceremonial Matcha Dual Bar (Espresso + Fresh Uji Matcha)",
+        "Ultimate 3-in-1 Triple Experience (Cold Brew + Espresso + Matcha & Refreshers)",
+        "Corporate Cart & Office Coffee Setup (Event Catering + Office Coffee Subscription)"
       ],
       trustedClients: [
         "Mana Tech", "Mana Wynwood", "Saks Fifth Avenue", "Merrill (A Bank of America Company)",
@@ -1609,6 +1619,8 @@ Select your preferred beverage cart experience:`,
               <button type="button" class="chat-opt-btn" onclick="selectInteractiveConcept('Ceremonial Matcha & Refreshers')">🍵 Matcha Bar</button>
               <button type="button" class="chat-opt-btn" onclick="selectInteractiveConcept('Specialty Espresso & Latte Art')">☕ Espresso & Latte</button>
               <button type="button" class="chat-opt-btn" onclick="selectInteractiveConcept('Gourmet Hot Chocolate Bar')">🍫 Hot Chocolate</button>
+              <button type="button" class="chat-opt-btn" onclick="selectInteractiveConcept('Multi-Bar Combination (Cold Brew + Espresso + Matcha)')">✨ Multi-Bar Combo (Cold Brew + Espresso + Matcha)</button>
+              <button type="button" class="chat-opt-btn" onclick="selectInteractiveConcept('Corporate Office Coffee & Event Service (Miami Coffee Services)')">🏢 Office Coffee & Events</button>
             </div>
           </div>`
         );
@@ -1776,16 +1788,19 @@ Or type your email or phone number here and we'll connect with you right away!`
       }
 
       // Packages
-      if (q.includes('package') || q.includes('menu') || q.includes('offer') || q.includes('option') || q.includes('paquete')) {
+      if (q.includes('package') || q.includes('menu') || q.includes('offer') || q.includes('option') || q.includes('paquete') || q.includes('brand') || q.includes('group') || q.includes('combine') || q.includes('combo')) {
         return {
           type: 'info',
-          text: `☕ <strong>Our 5 Mobile Beverage Experiences:</strong><br><br>
-1️⃣ <strong>Signature Nitro Cold Brew Bar:</strong> Nitrogen-infused cold brew on tap with velvety cascading foam and artisan syrups.<br>
-2️⃣ <strong>Ceremonial Matcha Bar:</strong> Uji ceremonial-grade matcha whisked fresh to order and organic fruit refreshers.<br>
-3️⃣ <strong>Specialty Espresso Bar:</strong> Italian commercial espresso machine, cortados, flat whites, and live latte art.<br>
-4️⃣ <strong>Gourmet Hot Chocolate Bar:</strong> Rich Belgian chocolate with torched artisan marshmallows and gold leaf flake.<br>
-5️⃣ <strong>Craft Fruit Refresher Bar:</strong> Cold-pressed juices, sparkling botanical infusions, and mocktails.<br><br>
-Click <strong>'⚡ Quote in 3 Clicks'</strong> above to calculate your event price in seconds!`
+          text: `🌿 <strong>Luisa Coffee Group Brands & Experiences:</strong><br><br>
+1️⃣ <strong>Miami Cold Brew Cart:</strong> Nitrogen-infused cold brew on tap with cascading crema (<a href="https://miamicoldbrewcart.com" target="_blank" style="color:var(--primary);">miamicoldbrewcart.com</a>)<br>
+2️⃣ <strong>Miami Coffee Cart:</strong> Mobile espresso bars, live latte art & Luisa Moments live guestbook (<a href="https://miamicoffeecart.com" target="_blank" style="color:var(--primary);">miamicoffeecart.com</a>)<br>
+3️⃣ <strong>Miami Matcha Cart:</strong> Ceremonial Uji matcha whisked fresh to order (<a href="https://miamimatchacart.com" target="_blank" style="color:var(--primary);">miamimatchacart.com</a>)<br>
+4️⃣ <strong>Miami Hot Chocolate Cart:</strong> Artisanal hot chocolate with torched marshmallows & gold flake (<a href="https://miamihotchocolatecart.com" target="_blank" style="color:var(--primary);">miamihotchocolatecart.com</a>)<br>
+5️⃣ <strong>Miami Refresher Cart:</strong> Sparkling iced teas & botanical fruit refreshers (<a href="https://miamirefreshercart.com" target="_blank" style="color:var(--primary);">miamirefreshercart.com</a>)<br>
+6️⃣ <strong>Miami Coffee Services:</strong> Corporate office coffee machines & bean supply (<a href="https://miamicoffeeservices.com" target="_blank" style="color:var(--primary);">miamicoffeeservices.com</a>)<br>
+7️⃣ <strong>Miami Coffee Lab:</strong> Barista training, tasting classes & sensory workshops (<a href="https://miamicoffeelab.com" target="_blank" style="color:var(--primary);">miamicoffeelab.com</a>)<br><br>
+✨ <strong>Yes, you can combine services!</strong> We offer custom dual-bar and triple-bar activations (e.g. <em>Cold Brew + Espresso + Matcha</em>) tailored for high-volume corporate and wedding events.<br><br>
+Click <strong>'⚡ Quote in 3 Clicks'</strong> to calculate an estimate!`
         };
       }
 

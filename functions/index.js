@@ -33,9 +33,35 @@ function defineScope(profile) {
   const bottleneck = (profile.bottleneck || "").toLowerCase();
   const kw = helpWith + " " + bottleneck;
 
-  if (kw.includes("matcha") || kw.includes("refresher") || kw.includes("content")) {
+  if (kw.includes("combination") || kw.includes("multi-bar") || kw.includes("combo") || (kw.includes("cold brew") && kw.includes("espresso")) || (kw.includes("cold brew") && kw.includes("matcha"))) {
     return {
-      service: "Ceremonial Matcha & Tropical Refresher Activation",
+      service: "Luisa Coffee Group Custom Multi-Bar Experience (Cold Brew + Espresso + Matcha)",
+      deliverables: [
+        "Dual mobile cart stations: Signature Nitro Cold Brew + Commercial Italian Espresso & Matcha bar",
+        "Unlimited single-origin 18-hour cold brew on tap, velvety nitro cascades, and hot espresso specialties",
+        "Ceremonial Uji matcha whisked fresh to order + tropical handcrafted refreshers",
+        "Custom branded cup sleeves and personalized event menu signage with your logo",
+        "3 Certified professional baristas delivering ultra-fast service for 200+ guests with zero line waiting",
+        "Complete dairy and organic plant-based milk bar (oat, almond, whole) and gourmet artisan syrups"
+      ],
+      timeline: "3 to 4 hours unlimited multi-station beverage service",
+      outOfScope: "Alcoholic cocktail mixing without designated venue liquor liability rider."
+    };
+  } else if (kw.includes("office") || kw.includes("corporate service") || kw.includes("lab") || kw.includes("service")) {
+    return {
+      service: "Miami Coffee Services & Lab Corporate Program",
+      deliverables: [
+        "Commercial automated bean-to-cup espresso equipment setup tailored for corporate spaces",
+        "Fresh weekly delivery of 100% Arabica Colombian specialty roast from Luisa Coffee",
+        "Full staff barista training and cupping workshop from Miami Coffee Lab",
+        "Turnkey preventive maintenance, water filtration exchange, and continuous bean replenishment"
+      ],
+      timeline: "Ongoing corporate service subscription & on-site event activation",
+      outOfScope: "Third-party equipment repair for uncertified hardware."
+    };
+  } else if (kw.includes("matcha") || kw.includes("refresher") || kw.includes("content")) {
+    return {
+      service: "Ceremonial Matcha & Tropical Refresher Activation (Miami Matcha & Refresher Cart)",
       deliverables: [
         "Premium Uji ceremonial-grade matcha whisked fresh to order (iced or warm)",
         "Handcrafted tropical refresher bar: Strawberry Hibiscus, Mango Passionfruit, Yuzu Mint",
@@ -48,7 +74,7 @@ function defineScope(profile) {
     };
   } else if (kw.includes("espresso") || kw.includes("hot coffee") || kw.includes("latte") || kw.includes("lead")) {
     return {
-      service: "Full Specialty Espresso & Latte Art Bar",
+      service: "Full Specialty Espresso & Latte Art Bar (Miami Coffee Cart)",
       deliverables: [
         "Commercial 2-group Italian espresso machine mounted on boutique coffee cart",
         "Complete hot espresso menu: Cortados, Flat Whites, Cappuccinos, Lattes, and Americanos",
@@ -62,7 +88,7 @@ function defineScope(profile) {
     };
   } else if (kw.includes("hot chocolate") || kw.includes("winter") || kw.includes("cocoa") || kw.includes("custom")) {
     return {
-      service: "Winter Gourmet Hot Chocolate & Warm Beverage Bar",
+      service: "Winter Gourmet Hot Chocolate & Warm Beverage Bar (Miami Hot Chocolate Cart)",
       deliverables: [
         "Rich European-style melted chocolate & velvety Swiss cocoa bars",
         "Gourmet toppings: hand-torched artisan marshmallows, crushed peppermint, cinnamon whipped cream",
@@ -76,7 +102,7 @@ function defineScope(profile) {
 
   // Default: Signature Nitro Cold Brew
   return {
-    service: "Signature Nitro Cold Brew & Iced Specialty Bar",
+    service: "Signature Nitro Cold Brew & Iced Specialty Bar (Miami Cold Brew Cart)",
     deliverables: [
       "Handcrafted wooden mobile cart with dual-tap nitrogen draft system",
       "Single-origin nitrogen-infused cold brew & ceremonial iced matcha on tap",
